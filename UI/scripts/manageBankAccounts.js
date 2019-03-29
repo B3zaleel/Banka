@@ -76,6 +76,8 @@ window.addEventListener('load', (loadEvent) => {
     renderBankAccountsData(testAccountsData);
 });
 
+const getShortDate = (dateObj) => `${dateObj.getDay()}/${dateObj.getMonth()}/${dateObj.getFullYear()}`;
+
 // #region ------------------>> Rendering functions.
 
 const renderBankAccountItemsRangeInfo = (accountsResultsInfo) => {
@@ -217,13 +219,9 @@ const renderBankAccountRecord = (accountId, bankAccountTransactions) => {
     accountRecordHtml += '</div></div>';
     
     accountRecordContainer.innerHTML = accountRecordHtml;
-    // accountRecordContainer.style.marginTop = `${navigationPanel.clientHeight + 20}px`;
-
-    
-    // const platformDlgHeight = usersPanel.clientHeight >= 520 ? `${usersPanel.clientHeight}px` : `${450 + navigationPanel.clientHeight + 20}px`;
     
     accountRecordPanel.style.display = 'block';
-    // accountRecordPanel.style.height = platformDlgHeight;
+    
     bankAccountsPanelElement.addEventListener('mousedown', (mouseDownEvent) => {
         if (mouseDownEvent.target.getAttribute('data-path') === 'accountRecord') {
             closeAccountPreview();
@@ -247,7 +245,6 @@ const closeSearchListPanel = () => {
     searchItemsDDListPanel.style.display = 'none';
 };
 
-const getShortDate = (dateObj) => `${dateObj.getDay()}/${dateObj.getMonth()}/${dateObj.getFullYear()}`;
 
 // #region ------------------>> Navigation functions.
 const navigateAcountsPanelLeft = () => {
