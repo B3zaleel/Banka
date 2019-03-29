@@ -2,13 +2,18 @@
 html{
     --veryLightGreenColorLevel1: rgb(223, 240, 225);
     --lightGreenColorLevel1: rgb(95, 228, 162);
-    --lightGreenColorLevel2: #0af50a;
-    --lightGreenColorLevel3: rgb(9, 231, 76);
+    --lightGreenColorLevel2: rgb(10, 245, 10);
+    --lightGreenColorLevel3: rgb(8, 231, 75);
     --mediumGreenColorLevel1: rgb(84, 180, 73);
     --mediumGreenColorLevel2: rgb(70, 173, 79);
     --lightGrayColorLevel1: rgb(243, 237, 237);
     --lightGrayColorLevel2: rgb(212, 209, 209);
     --lightGrayColorLevel3: rgb(202, 198, 198);
+    --lightRedColorLevel1: rgb(228, 95, 162);
+    --lightRedColorLevel2: rgb(245, 10, 10);
+    --lightRedColorLevel3: rgb(231, 8, 75);
+    --mediumRedColorLevel1: rgb(180, 84, 73);
+    --mediumRedColorLevel2: rgb(173, 70, 79);
 }
 
 *::selection{
@@ -44,9 +49,13 @@ html{
     width: 100%;
     left: 0px;
     top: 0px;
-    z-index: 5;
+    z-index: 7777777777777777;
     padding: 5px;
     background-color: var(--mediumGreenColorLevel2);
+}
+
+.pageHeader.sideBarToggleBtn{
+    display: none;
 }
 
 .pageBody{
@@ -64,36 +73,30 @@ html{
 }
 
 .actionBtn{
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius:25px;
     height: 30px;
     min-width: 30px;
+    padding: 5px 10px 5px 10px;
+    border-radius:25px;
     text-decoration: none;
-    /* text-decoration-line: none; */
+    text-decoration-line: none;
     font-size: 15px;
     font-weight: 700;
     font-family: Cambria, Cochin, Georgia, sans-serif;
     color: #000;
-    /* background-color: #5cb85c; */
-    border: 2px solid #4cae4c;
-    /* border-bottom-style: groove; */
+    border: 2px solid var(--mediumGreenColorLevel2);
     outline: none;
     background-image: linear-gradient(var(--lightGreenColorLevel2), var(--lightGreenColorLevel3));
-    /* background-image: linear-gradient(rgb(92, 241, 6), rgb(148, 241, 9) ); */
     user-select: none;
     -ms-user-select: none;
     -webkit-user-select: none;
     cursor: hand;
-    cursor: -webkit-hand;
 }
 
-.actionBtn:active{
+.actionBtn:active, .dangerBtn:active{
     margin-left: 5px;
     margin-right: 5px;
     padding-left: 5px;
     padding-right: 5px;
-    background-image: linear-gradient(var(--lightGreenColorLevel1), var(--lightGreenColorLevel2));
 }
 
 .actionBtn:hover {
@@ -102,19 +105,26 @@ html{
 }
 
 .dangerBtn{
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius:25px;
     height: 30px;
     min-width: 30px;
+    padding: 5px 10px 5px 10px;
+    border-radius:25px;
     text-decoration: none;
+    text-decoration-line: none;
     font-size: 15px;
     font-weight: 700;
     font-family: Cambria, Cochin, Georgia, sans-serif;
     color: white;
-    background-image: linear-gradient(rgb(209, 79, 79), red);
+    border: 2px solid var(--mediumRedColorLevel2);
+    background-image: linear-gradient(var(--lightRedColorLevel2), var(--lightRedColorLevel3));
     outline:none;
     user-select: none;
+    cursor: hand;
+}
+
+.dangerBtn:hover {
+    background-image: linear-gradient(var(--lightRedColorLevel1), var(--lightRedColorLevel2));
+    border-color: var(--lightRedColorLevel1);
 }
 
 a{
@@ -137,7 +147,7 @@ hr.fullDemarcation{
 /* #region ------------------>> Form Panel layout Controls */
 
 .formPanel{
-    display: table;
+    display: inline-block;
     position: relative;
     width: auto;
     padding: 5px 10px 10px 0px;
@@ -148,45 +158,25 @@ hr.fullDemarcation{
 }
 
 .formPanelRow{
-    /* display: flex; */
-    display: table-row;
-    /* display: -webkit-flex; */
-    /* grid-template-columns: 1fr 1fr; */
-    /* grid-gap: 10px; */
-    /* grid-auto-columns: 0; */
-    /* justify-content: stretch; */
-    /* align-items: center; */
-    /* flex-flow: row; */
-    width: 100%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: stretch;
+    width: auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    grid-area: auto;
 }
 
 .formPanelLeftItem{
-    display: table-cell;
-    
-    column-span: 1;
-    /* grid-column: 0; */
-    /* display: flex; */
-    justify-content: flex-end;
-    align-items: center;
-    vertical-align: middle;
-    padding: 5px;
-    /* flex: 1; */
     text-align: right;
-    /* grid-area: auto; */
+    grid-area: left;
+    grid-column: 1;
 }
+
 .formPanelCenterItem{
-    display: table-cell;
-    column-span: 2;
-    -webkit-column-span: 2;
-    /* -ms-grid-column-span: 2; */
-    
-    vertical-align: middle;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    grid-area: "left center right";
+    grid-column: 1;
 }
 
 .centerElement{
@@ -195,13 +185,8 @@ hr.fullDemarcation{
     text-align: center;
 }
 .formPanelRightItem{
-    display: table-cell;
-    grid-column: 1;
-    vertical-align: middle;
-    /* display: flex; */
-    /* justify-content: flex-start; */
-    /* flex: 1; */
-    grid-area: auto;
+    grid-column: 2;
+    grid-area: "right";
 }
 
 /* #endregion */
@@ -209,12 +194,11 @@ hr.fullDemarcation{
 /* #region ---------------->> Form Panel Controls */
 
 .formPanelLabel {
-    /* margin-right: 10px; */
     font-weight: 550;
     text-align: right;
-    /* user-select: none;
+    user-select: none;
     -ms-user-select: none;
-    -webkit-user-select: none; */
+    -webkit-user-select: none;
 }
 
 input.formPanelInput{
@@ -230,13 +214,6 @@ input.formPanelInput{
     background-color: var(--lightGrayColorLevel1);
 }
 
-/* select.formPanelInput{
-    min-width: 100px;
-    margin-right: 70px;
-    
-    max-width: 170px;
-} */
-
 input.formPanelInput[type="checkbox"]{
     height: 20px;
     width: 20px;
@@ -244,11 +221,7 @@ input.formPanelInput[type="checkbox"]{
     border-radius: 5px;
 }
 
-input.formPanelInput[type="date"]{
-    width: 170px;
-    /* margin-right: 20px; */
-}
-
+input.formPanelInput[type="date"],
 input.formPanelInput[type="email"],
 input.formPanelInput[type="number"],
 input.formPanelInput[type="password"],
@@ -260,7 +233,6 @@ input.formPanelInput[type="text"]{
 input.formPanelInput:focus {
     border: 2px solid var(--lightGreenColorLevel2);
     background-color: white;
-    /* box-shadow: inset 0 2px 2px var(--lightGreenColorLevel1), 0 0 8px var(--lightGreenColorLevel2); */
 }
 
 input.formPanelInput.error{
@@ -314,13 +286,33 @@ select.formPanelSelect:focus {
 }
 
 #signUpProfilePicNavBar>button{
-    background: greenyellow;
-    border-radius:15px;
-    padding: 0px;
     height: 30px;
     width: 30px;
-    border: 2px solid green;
+    padding: 0px;
+    border-radius:15px;
+    text-decoration: none;
+    text-decoration-line: none;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: Cambria, Cochin, Georgia, sans-serif;
+    border: 2px solid var(--mediumGreenColorLevel2);
     outline: none;
+    background-image: linear-gradient(var(--lightGreenColorLevel2), var(--lightGreenColorLevel3));
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    cursor: hand;
+}
+
+#signUpProfilePicNavBar>button:active{
+    transform: translateX(8);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#signUpProfilePicNavBar>button:hover {
+    background-image: linear-gradient(var(--lightGreenColorLevel1), var(--lightGreenColorLevel2));
+    border-color: var(--lightGreenColorLevel1);
 }
 
 #signUpProfilePicNavBar>button>img{
@@ -329,6 +321,7 @@ select.formPanelSelect:focus {
 }
 
 #signUpProfilePicContainer{
+    position: relative;
     display: inline-block;
     border-radius: 5px;
     padding: 5px;
@@ -338,13 +331,14 @@ select.formPanelSelect:focus {
 
 /* #endregion */
 
-/* #region */
+/* #region Alignment styles. */
 
 .contentFitPanel{
     /* display: inline-block; */
     width: fit-content;
     margin: auto;
 }
+
 .h-centerText{
     text-align: center;
 }
@@ -357,10 +351,9 @@ select.formPanelSelect:focus {
     display: flex;
     display: -webkit-flex;
     justify-content: center;
-    /* text-align: center; */
-    /* justify-items: stretch; */
     width: auto;
 }
+
 .testPanel{
     display: inline-block;
     position: relative;
@@ -388,8 +381,6 @@ select.formPanelSelect:focus {
     z-index: 5;
     width: 100%;
     top: 35px;
-    /* left: 10px; */
-    /* right: 10px; */
     max-height: 150px;
     background-color: #f1f1f1;
     border-bottom-left-radius: 7px;
@@ -417,7 +408,7 @@ select.formPanelSelect:focus {
 }
 
 .searchListItemContent-Select{
-    color: #00ff00;
+    color: var(--lightGreenColorLevel2);
     background-color: whitesmoke;
 }
 
@@ -460,11 +451,11 @@ select.formPanelSelect:focus {
     background-color: var(--veryLightGreenColorLevel1);
 }
 
-.accountsListPage-Active{
+.accountsListPage-Active, .active{
     display: block;
 }
 
-.accountsListPage-Inactive{
+.accountsListPage-Inactive, .inactive{
     display: none;
 }
 
@@ -479,13 +470,17 @@ select.formPanelSelect:focus {
 }
 
 .listItemActionBtn{
+    display: flex;
     height: 25px;
     width: 25px;
-    padding: 0px;
     border-radius: 15px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
     color: var(--mediumGreenColorLevel1);
     border: 2px solid var(--mediumGreenColorLevel2);
     outline: none;
+    text-decoration: none;
 }
 
 .listItemActionBtn:hover{
@@ -499,7 +494,6 @@ select.formPanelSelect:focus {
 }
 
 #accountRecordContainer{
-    /* height: calc(100% - 40px); */
     margin: 20px 20px 20px 20px;
     border-radius: 15px;
     padding: 5px;
@@ -525,6 +519,7 @@ select.formPanelSelect:focus {
     .formPanel{
         display: block;
     }
+
     .formPanelRow{
         display: block;
         align-items: stretch;
@@ -555,24 +550,6 @@ select.formPanelSelect:focus {
 
     select.formPanelInput{
         width: 100px;
-    }
-
-
-
-    label.transactionLabel{
-        display: block;
-        width: auto;
-        text-align: left;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        margin-right: 0px;
-        margin-left: 0px;
-    }
-
-    .transactionInput, .formPanelRow>select{
-        display: block;
-        margin-top: 5px;
-        margin-bottom: 5px;
     }
 
 }

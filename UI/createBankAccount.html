@@ -11,7 +11,7 @@
 <body>
     <div>
         <div id="pageHeaderPanel" class="pageHeader">
-            <a class="homeLink">
+            <a class="homeLink" href="#">
                 <!-- <img/> -->
                 <label>
                     Banka
@@ -21,80 +21,87 @@
 
         <div id="pageBodyPanel" class="pageBody">
             <div>
-
-                <div class="formPanel">
-            
-                    <div class="formPanelRow">
-                        <span class="formPanelLeftItem">
-                            <label class="formPanelLabel">
-                                State
-                            </label>
-                        </span>
-                        <span class="formPanelRightItem">
-                            <select id="statesComboBox" name="state" class="formPanelInput">
-                                <option>Lagos</option>
-                            </select>
-                        </span>            
-                    </div>
-            
-                    <div class="formPanelRow">
-                        <span class="formPanelLeftItem">
-                            <label class="formPanelLabel">
-                                Branch
-                            </label>
-                        </span>
-                        <span class="formPanelRightItem">
-                            <select id="branchesComboBox" name="branch" class="formPanelInput">
-                                <option>15 Adeniyi Jones</option>
-                            </select>
-                        </span>            
-                    </div>
-            
-                    <div class="formPanelRow">
-                        <span class="formPanelLeftItem">
-                            <label class="formPanelLabel">
-                                Id Type
-                            </label>
-                        </span>
-                        <span class="formPanelRightItem">
-                            <select id="idTypesComboBox" name="idType" class="formPanelInput">
-                                <option>International Passport</option>
-                            </select>
-                        </span>
-                    </div>
-            
-                    <div class="formPanelRow">
-                        <span class="formPanelLeftItem">
-                            <label class="required-Lbl formPanelLabel">
-                                Id number
-                            </label>
-                        </span>
-                        <span class="formPanelRightItem">
-                            <input id="idNumberInput" type="number" class="formPanelInput" name="idNumber" required="required"/>
-                        </span>            
-                    </div>
-            
-                    <div class="formPanelRow">
-                        <span class="formPanelLeftItem">
-                            <label class="required-Lbl formPanelLabel">
-                                Expiry date
-                            </label>
-                        </span>
-                        <span class="formPanelRightItem">
-                            <input id="idExpiryDateInput" type="date" class="formPanelInput" name="idExpiryDate" required="required"/>
-                        </span>            
-                    </div>
-            
-                    <div class="h-centerGroup">
-                        <input type="submit" class="actionBtn" value="Create Account"/>
-                    </div>
-            
+                <div class="h-centerText">
+                    Please provide the correct information and<br/> 
+                    click the "Create Account" button.<br/>
+                    <i>
+                        NB: Required fields begin with <span class="required-Lbl"></span>
+                    </i>
                 </div>
-            
+                <br/>
+                <div class="h-centerGroup">
+                    <div class="formPanel">
+                
+                        <div class="formPanelRow">
+                            <span class="formPanelLeftItem">
+                                <label class="formPanelLabel">
+                                    State
+                                </label>
+                            </span>
+                            <span class="formPanelRightItem">
+                                <select id="statesComboBox" name="state" class="formPanelSelect">
+                                    <option value="lagos">Lagos</option>
+                                </select>
+                            </span>            
+                        </div>
+                
+                        <div class="formPanelRow">
+                            <span class="formPanelLeftItem">
+                                <label class="formPanelLabel">
+                                    Branch
+                                </label>
+                            </span>
+                            <span class="formPanelRightItem">
+                                <select id="branchesComboBox" name="branch" class="formPanelSelect">
+                                    <option value="15 Adeniyi Jones">15 Adeniyi Jones</option>
+                                </select>
+                            </span>            
+                        </div>
+                
+                        <div class="formPanelRow">
+                            <span class="formPanelLeftItem">
+                                <label class="formPanelLabel">
+                                    Id Type
+                                </label>
+                            </span>
+                            <span class="formPanelRightItem">
+                                <select id="idTypesComboBox" name="idType" class="formPanelSelect">
+                                    <option value="International Passport">International Passport</option>
+                                </select>
+                            </span>
+                        </div>
+                
+                        <div class="formPanelRow">
+                            <span class="formPanelLeftItem">
+                                <label class="required-Lbl formPanelLabel">
+                                    Id number
+                                </label>
+                            </span>
+                            <span class="formPanelRightItem">
+                                <input id="idNumberInput" type="number" class="formPanelInput" name="idNumber" required="required"/>
+                            </span>            
+                        </div>
+                
+                        <div class="formPanelRow">
+                            <span class="formPanelLeftItem">
+                                <label class="required-Lbl formPanelLabel">
+                                    Expiry date
+                                </label>
+                            </span>
+                            <span class="formPanelRightItem">
+                                <input id="idExpiryDateInput" type="date" class="formPanelInput" name="idExpiryDate" required="required"/>
+                            </span>            
+                        </div>
+                
+                        <div class="h-centerGroup">
+                            <input type="submit" class="actionBtn" value="Create Account"/>
+                        </div>
+                
+                    </div>
+                </div>
                 <script type="text/javascript">
-                </script>
-            </div>
-                    
+                </script>                
+            </div>                    
         </div>
         
         <div id="pageFooterPanel" class="pageFooter">
@@ -102,9 +109,9 @@
             <footer >
                 <div class="h-centerGroup">
                     <div>
-                        <a>About</a>
+                        <a href="#">About</a>
                         <!-- <a href="./PrivacyPolicy.html">Privacy Policy</a> -->
-                        <a>Contact</a>
+                        <a href="#">Contact</a>
                     </div>
                 </div>
                 <div class="h-centerGroup">
@@ -115,30 +122,6 @@
         </div>
     </div>
 
-    <script type="text/javascript">
-        const pageHeaderElement = document.getElementById('pageHeaderPanel');
-        const pageFooterElement = document.getElementById('pageFooterPanel');
-        const pageBodyElement = document.getElementById('pageBodyPanel');
-
-        const loadFooterDate = () => {
-            const dateLbl = document.getElementById('footerCopyrightLbl');
-            dateLbl.innerText = `©${new Date().getFullYear()} - Banka Ltd `;
-        };
-
-        window.onload = (loadEvent) => {
-            loadFooterDate();
-        };
-        
-        window.onscroll = (scrollEvent) => {
-            if(scrollY >= 9){
-                pageHeaderElement.style.boxShadow = '0px 0px 0px 8px rgba(12, 247, 3, 0.2)';
-            }
-            else{
-                pageHeaderElement.style.boxShadow = '0px 0px 0px 0px rgba(0, 0, 0, 0)';
-            }
-        };
-
-       
-    </script>
+    <script type="text/javascript" src="scripts/_layout.js"> </script>
 </body>
 </html>
