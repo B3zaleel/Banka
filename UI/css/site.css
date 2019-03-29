@@ -1,0 +1,578 @@
+/* Color palette definition */
+html{
+    --veryLightGreenColorLevel1: rgb(223, 240, 225);
+    --lightGreenColorLevel1: rgb(95, 228, 162);
+    --lightGreenColorLevel2: #0af50a;
+    --lightGreenColorLevel3: rgb(9, 231, 76);
+    --mediumGreenColorLevel1: rgb(84, 180, 73);
+    --mediumGreenColorLevel2: rgb(70, 173, 79);
+    --lightGrayColorLevel1: rgb(243, 237, 237);
+    --lightGrayColorLevel2: rgb(212, 209, 209);
+    --lightGrayColorLevel3: rgb(202, 198, 198);
+}
+
+*::selection{
+    color: var(--lightGreenColorLevel2);
+    background-color: whitesmoke;
+}
+
+/* #region ----------->> Home Styles. */
+
+.homeLink{
+    color: white;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 27px;
+    text-decoration-line: none;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    cursor: hand;
+}
+
+.homeLink label{
+    cursor: hand;
+}
+
+.homeLink:hover{
+    color: whitesmoke;
+}
+
+.pageHeader{
+    position: fixed;
+    height: 30px;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: 5;
+    padding: 5px;
+    background-color: var(--mediumGreenColorLevel2);
+}
+
+.pageBody{
+    margin-top: 45px;
+}
+
+
+/* #endregion */
+
+/* #region */
+
+.required-Lbl::before{
+    content: "*";
+    color: red
+}
+
+.actionBtn{
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius:25px;
+    height: 30px;
+    min-width: 30px;
+    text-decoration: none;
+    /* text-decoration-line: none; */
+    font-size: 15px;
+    font-weight: 700;
+    font-family: Cambria, Cochin, Georgia, sans-serif;
+    color: #000;
+    /* background-color: #5cb85c; */
+    border: 2px solid #4cae4c;
+    /* border-bottom-style: groove; */
+    outline: none;
+    background-image: linear-gradient(var(--lightGreenColorLevel2), var(--lightGreenColorLevel3));
+    /* background-image: linear-gradient(rgb(92, 241, 6), rgb(148, 241, 9) ); */
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    cursor: hand;
+    cursor: -webkit-hand;
+}
+
+.actionBtn:active{
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-image: linear-gradient(var(--lightGreenColorLevel1), var(--lightGreenColorLevel2));
+}
+
+.actionBtn:hover {
+    background-image: linear-gradient(var(--lightGreenColorLevel1), var(--lightGreenColorLevel2));
+    border-color: var(--lightGreenColorLevel1);
+}
+
+.dangerBtn{
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius:25px;
+    height: 30px;
+    min-width: 30px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: Cambria, Cochin, Georgia, sans-serif;
+    color: white;
+    background-image: linear-gradient(rgb(209, 79, 79), red);
+    outline:none;
+    user-select: none;
+}
+
+a{
+    color: var(--mediumGreenColorLevel1);
+    cursor: hand;
+}
+
+button{
+    cursor: hand;
+}
+
+hr.fullDemarcation{
+    background-color: #000;
+    border: none;
+    height: 3px;
+}
+
+/* #endregion */
+
+/* #region ------------------>> Form Panel layout Controls */
+
+.formPanel{
+    display: table;
+    position: relative;
+    width: auto;
+    padding: 5px 10px 10px 0px;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: var(--veryLightGreenColorLevel1);
+    overflow: auto;
+}
+
+.formPanelRow{
+    /* display: flex; */
+    display: table-row;
+    /* display: -webkit-flex; */
+    /* grid-template-columns: 1fr 1fr; */
+    /* grid-gap: 10px; */
+    /* grid-auto-columns: 0; */
+    /* justify-content: stretch; */
+    /* align-items: center; */
+    /* flex-flow: row; */
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    grid-area: auto;
+}
+
+.formPanelLeftItem{
+    display: table-cell;
+    
+    column-span: 1;
+    /* grid-column: 0; */
+    /* display: flex; */
+    justify-content: flex-end;
+    align-items: center;
+    vertical-align: middle;
+    padding: 5px;
+    /* flex: 1; */
+    text-align: right;
+    /* grid-area: auto; */
+}
+.formPanelCenterItem{
+    display: table-cell;
+    column-span: 2;
+    -webkit-column-span: 2;
+    /* -ms-grid-column-span: 2; */
+    
+    vertical-align: middle;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.centerElement{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.formPanelRightItem{
+    display: table-cell;
+    grid-column: 1;
+    vertical-align: middle;
+    /* display: flex; */
+    /* justify-content: flex-start; */
+    /* flex: 1; */
+    grid-area: auto;
+}
+
+/* #endregion */
+
+/* #region ---------------->> Form Panel Controls */
+
+.formPanelLabel {
+    /* margin-right: 10px; */
+    font-weight: 550;
+    text-align: right;
+    /* user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none; */
+}
+
+input.formPanelInput{
+    height: 30px;
+    margin: 5px 0px 5px 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px 15px 15px 15px;
+    border: 2px solid var(--mediumGreenColorLevel2);
+    font-size: 15px;
+    outline: none;
+    color: #000;
+    background-color: var(--lightGrayColorLevel1);
+}
+
+/* select.formPanelInput{
+    min-width: 100px;
+    margin-right: 70px;
+    
+    max-width: 170px;
+} */
+
+input.formPanelInput[type="checkbox"]{
+    height: 20px;
+    width: 20px;
+    margin-right: 150px;
+    border-radius: 5px;
+}
+
+input.formPanelInput[type="date"]{
+    width: 170px;
+    /* margin-right: 20px; */
+}
+
+input.formPanelInput[type="email"],
+input.formPanelInput[type="number"],
+input.formPanelInput[type="password"],
+input.formPanelInput[type="tel"],
+input.formPanelInput[type="text"]{
+    width: 170px;
+}
+
+input.formPanelInput:focus {
+    border: 2px solid var(--lightGreenColorLevel2);
+    background-color: white;
+    /* box-shadow: inset 0 2px 2px var(--lightGreenColorLevel1), 0 0 8px var(--lightGreenColorLevel2); */
+}
+
+input.formPanelInput.error{
+    border: 2px solid #db413c;
+    box-shadow: inset 0 0 2px 2px rgba(233, 88, 88, 0.747);
+}
+
+input.formPanelInput.error:focus{
+    border: 2px solid #f50202;
+    box-shadow: inset 0 2px 2px rgba(211, 133, 133, 0.952), 0 0 8px rgba(235, 69, 69, 0.86);
+}
+
+select.formPanelSelect{
+    height: 30px;
+    margin: 5px 0px 5px 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 15px 15px 15px 15px;
+    border: 2px solid var(--mediumGreenColorLevel2);
+    font-size: 15px;
+    outline: none;
+    background-color: var(--lightGrayColorLevel1);
+}
+
+select.formPanelSelect:focus {
+    border: 2px solid var(--lightGreenColorLevel2);
+    background-color: white;
+}
+
+#signUpProfilePic{
+    position: absolute;
+    width:100px;
+    height:100px;
+    z-index: 5;
+}
+
+#signUpProfilePicBg{
+    position: absolute;
+    z-index: 0;
+}
+
+#signUpProfilePicNavBar{
+    position: absolute;
+    visibility: hidden;
+    z-index: 6;
+    margin-left: 15px;
+    margin-top: 65px;
+    padding-left: 5px;
+    width: 70px;
+    height: 35px;
+}
+
+#signUpProfilePicNavBar>button{
+    background: greenyellow;
+    border-radius:15px;
+    padding: 0px;
+    height: 30px;
+    width: 30px;
+    border: 2px solid green;
+    outline: none;
+}
+
+#signUpProfilePicNavBar>button>img{
+    height: 20px;
+    width: 20px;   
+}
+
+#signUpProfilePicContainer{
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px;
+    height: 100px;
+    width: 170px;
+}
+
+/* #endregion */
+
+/* #region */
+
+.contentFitPanel{
+    /* display: inline-block; */
+    width: fit-content;
+    margin: auto;
+}
+.h-centerText{
+    text-align: center;
+}
+
+.v-centerText{
+    vertical-align: middle;
+}
+
+.h-centerGroup {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    /* text-align: center; */
+    /* justify-items: stretch; */
+    width: auto;
+}
+.testPanel{
+    display: inline-block;
+    position: relative;
+    width: auto;
+}
+
+.v-centerGroup {
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+}
+
+/* #endregion */
+
+/* #region Navigation Controls. */
+
+.searchPanel{
+    position: relative;
+    display: inline-block;
+}
+
+#searchItemsDDList{
+    position: absolute;
+    display: none;
+    z-index: 5;
+    width: 100%;
+    top: 35px;
+    /* left: 10px; */
+    /* right: 10px; */
+    max-height: 150px;
+    background-color: #f1f1f1;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    box-shadow: 0px 4px 4px 4px rgba(0,0,0,0.2);
+    overflow: auto;
+}
+
+.searchListItem{
+    display: block;
+    width: 100%;
+    padding: 0px;
+    border: none;
+    border-radius: 0px;
+    background-color: white;
+    outline: none;
+    text-decoration-line: none;
+    user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;            
+}
+
+.searchListItem.last{
+    border-radius: 0px 0px 7px 7px;
+}
+
+.searchListItemContent-Select{
+    color: #00ff00;
+    background-color: whitesmoke;
+}
+
+.searchListItem:hover{
+    background-color: whitesmoke;
+}
+
+.navigationBtn{
+    width: 25px;
+    height: 25px;
+    border: 2px solid green;
+    border-radius: 15px;
+    padding: 0px;
+    color: green;
+    font-size: 20px;
+    outline: none;
+}
+
+.navigationBtn:active{
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--lightGreenColorLevel1);
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+/* #endregion */
+
+/* #region Account records, account and transaction list items */
+
+.listItemType1 {
+    display: inline-block;
+    border-radius: 6px;
+    margin: 10px;
+    padding: 5px;
+    background-color: var(--lightGrayColorLevel2);
+}
+
+.listItemType1:hover{
+    background-color: var(--veryLightGreenColorLevel1);
+}
+
+.accountsListPage-Active{
+    display: block;
+}
+
+.accountsListPage-Inactive{
+    display: none;
+}
+
+.highlight{
+    background-image: radial-gradient(rgb(247, 234, 123), rgb(236, 240, 17));
+}
+
+.transactionPanel{
+    width: 100%;
+    max-height: calc(100% - 480px);
+    overflow: auto;
+}
+
+.listItemActionBtn{
+    height: 25px;
+    width: 25px;
+    padding: 0px;
+    border-radius: 15px;
+    color: var(--mediumGreenColorLevel1);
+    border: 2px solid var(--mediumGreenColorLevel2);
+    outline: none;
+}
+
+.listItemActionBtn:hover{
+    color: var(--lightGreenColorLevel2);
+    border-color: var(--lightGreenColorLevel2);
+    background-color: white;
+}
+
+.listItemActionBtn:active{
+    width: 20px;
+}
+
+#accountRecordContainer{
+    /* height: calc(100% - 40px); */
+    margin: 20px 20px 20px 20px;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: white;
+    opacity: 1;
+}
+
+#accountRecordPanel{
+    position: absolute;
+    display: none;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    background-color: rgba(212, 226, 204, 0.75);
+}
+
+/* #endregion */
+
+@media(max-width:360px) {
+    .formPanel{
+        display: block;
+    }
+    .formPanelRow{
+        display: block;
+        align-items: stretch;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .formPanelLeftItem{
+        display: block;
+        flex: 0;
+        text-align: left;
+    }
+    
+    .formPanelRightItem{
+        display: block;
+        flex: 0;
+    }
+        
+    .formPanelLabel{
+        display: block;
+        text-align: left;
+        margin-right: 0px;
+    }
+
+    .formPanelInput {
+        display: block;
+    }
+
+    select.formPanelInput{
+        width: 100px;
+    }
+
+
+
+    label.transactionLabel{
+        display: block;
+        width: auto;
+        text-align: left;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .transactionInput, .formPanelRow>select{
+        display: block;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+}

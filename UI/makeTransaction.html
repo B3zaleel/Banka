@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    <link rel="stylesheet" href="./css/site.css">
+    <title>Make Transaction - Banka</title>
+</head>
+<body>
+    <div>
+        <div id="pageHeaderPanel" class="pageHeader">
+            <a class="homeLink">
+                <!-- <img/> -->
+                <label>
+                    Banka
+                </label>
+            </a>
+        </div>
+
+        <div id="pageBodyPanel" class="pageBody">
+            <div>
+                <div class="h-centerText">
+                    <h5>
+                        Please fill in the required information <br/> below to make the transaction.
+                    </h5>
+                    <label id="transactionErrorLabel"> </label>
+                </div>
+                <div class="h-centerGroup">
+                    <div class="formPanel">
+
+                        <div class="formPanelRow">
+                            <span class="formPanelLeftItem">
+                                <label class="formPanelLabel required-Lbl ">
+                                    Account Number
+                                </label>
+                            </span>
+                            <span class="formPanelRightItem">
+                                <input id="accountNumberInput" class="formPanelInput" type="number" name="accountNumber" required="required"/>
+                            </span>
+                        </div>
+                        
+                        <div class="formPanelRow">
+                            <span class="formPanelLeftItem">
+                                <label class="formPanelLabel">
+                                    Transaction Type
+                                </label>
+                            </span>
+                            <span class="formPanelRightItem">
+                                <select id="transactionTypeComboBox" name="transactionType" class="formPanelSelect">
+                                    <option value="credit" selected="selected"> Credit </option>
+                                    <option value="debit"> Debit </option>
+                                </select>
+                            </span>
+                        </div>
+                        
+                        <div class="formPanelRow">
+                            <span class="formPanelLeftItem">
+                                <label class="required-Lbl formPanelLabel">
+                                    Amount
+                                </label>
+                            </span>
+                            <span class="formPanelRightItem">
+                                <input id="ammountInput" class="formPanelInput" type="text" name="transactionAmount" pattern="(\d+|\d*\.\d+)" required="required"/>
+                            </span>
+                        </div>
+                    
+                        <div class="h-centerGroup">
+                            <button id="makeTransaction" class="actionBtn">
+                                Make Transaction
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                </script>
+            </div>
+            
+        </div>
+        
+        <div id="pageFooterPanel" class="pageFooter">
+            <hr class="footerLine"/>
+            <footer >
+                <div class="h-centerGroup">
+                    <div>
+                        <a>About</a>
+                        <!-- <a href="./PrivacyPolicy.html">Privacy Policy</a> -->
+                        <a>Contact</a>
+                    </div>
+                </div>
+                <div class="h-centerGroup">
+                    <label id="footerCopyrightLbl"></label>
+                </div>
+                
+            </footer>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        const pageHeaderElement = document.getElementById('pageHeaderPanel');
+        const pageFooterElement = document.getElementById('pageFooterPanel');
+        const pageBodyElement = document.getElementById('pageBodyPanel');
+
+        const loadFooterDate = () => {
+            const dateLbl = document.getElementById('footerCopyrightLbl');
+            dateLbl.innerText = `©${new Date().getFullYear()} - Banka Ltd `;
+        };
+
+        window.onload = (loadEvent) => {
+            loadFooterDate();
+        };
+        
+        window.onscroll = (scrollEvent) => {
+            if(scrollY >= 9){
+                pageHeaderElement.style.boxShadow = '0px 0px 0px 8px rgba(12, 247, 3, 0.2)';
+            }
+            else{
+                pageHeaderElement.style.boxShadow = '0px 0px 0px 0px rgba(0, 0, 0, 0)';
+            }
+        };
+
+       
+    </script>
+</body>
+</html>
