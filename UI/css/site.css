@@ -170,7 +170,7 @@ hr.fullDemarcation{
 
 .formPanelLeftItem{
     text-align: right;
-    grid-area: left;
+    grid-area: "left";
     grid-column: 1;
 }
 
