@@ -167,7 +167,7 @@
                                                 <button class="changePic" onclick="browsePicture_OnClick('signUpProfilePicInput', 'signUpProfilePic')" title="Change this photo">
                                                     <img src="./images/change.png"/>
                                                 </button>
-                                                <button class="removePic" title="Remove this photo">
+                                                <button class="removePic" onclick="removePicture_OnClick('signUpProfilePicInput', 'signUpProfilePic')" title="Remove this photo">
                                                     <img src="./images/remove.png"/>
                                                 </button>
                                             </div>
@@ -177,17 +177,7 @@
                                 </span>                                    
                             </div>
 
-                            <div class="formPanelRow">
-                                <div class="formPanelCenterItem">
-                                    <span class="centerElement">
-                                            <div class="h-centerGroup">
-                                                    <button class="actionBtn" id="signUpBtn">Sign Up</button>
-                                                </div>
-                                    </span>
-                                    
-                                </div>
-                                
-                            </div>
+                            <button class="actionBtn" id="signUpBtn">Sign Up</button>
                             
                         </div>
                     </div>
@@ -197,21 +187,36 @@
                 <script type="text/javascript">
             
                 const browsePicture_OnClick = (inputElementId, outputElementId) => {
+                    // file input element for opening the file select dialog and storing the image as a blob.                    
                     const pictureInputElement = document.getElementById(inputElementId);
+                    // img element for displaying the image.
                     const outputImageElement = document.getElementById(outputElementId);
                     pictureInputElement.addEventListener("change", (ev) => {
                         const fileArray = pictureInputElement.files;
-                        readImageFile(fileArray[0],outputImageElement);
+                        if (fileArray.length > 0){
+                            readImageFile(fileArray[0],outputImageElement);
+                        }                        
                     });
                     pictureInputElement.click();
                 };
-            
+                
+                const toggleImgElement = (toggleCode) => {
+                    const pictureElement = document.getElementById('signUpProfilePic');
+                    if (toggleCode == 1) {
+                        pictureElement.style.visibility = "visible";
+                    }
+                    else {
+                        pictureElement.style.visibility = "hidden";
+                    }
+                };
+
                 const readImageFile = (file, pictureElement) => {
                     const reader = new FileReader();
                     reader.onload = (e) => {
                         pictureElement.src = e.target.result;
                     };
                     reader.readAsDataURL(file);
+                    toggleImgElement(1);
                 };
             
                 const signUpProfilePicture_OnMouseOver = () => {
@@ -224,8 +229,13 @@
                     navigationPanel.style.visibility = "hidden";
                 };
             
-                const removePicture_OnClick = ()=>{
-                    pictureElement.src = null;
+                const removePicture_OnClick = (inputElementId, outputElementId)=>{
+                    const pictureInputElement = document.getElementById(inputElementId);
+                    const outputImageElement = document.getElementById(outputElementId);
+                    outputImageElement.setAttribute('src', '');
+                    
+                    pictureInputElement.files = null;
+                    toggleImgElement(0);
                 };
             
                 </script>
