@@ -11,7 +11,10 @@
 <body>
     <div>
         <div id="pageHeaderPanel" class="pageHeader">
-            <a class="homeLink">
+            <button id="sideBarToggleBtn" class="sideBarToggleBtn">
+                <b class="fa fa-bars"></b>
+            </button>
+            <a class="homeLink" href="#">
                 <!-- <img/> -->
                 <label>
                     Banka
@@ -28,9 +31,9 @@
             <footer >
                 <div class="h-centerGroup">
                     <div>
-                        <a>About</a>
+                        <a href="#">About</a>
                         <!-- <a href="./PrivacyPolicy.html">Privacy Policy</a> -->
-                        <a>Contact</a>
+                        <a href="#">Contact</a>
                     </div>
                 </div>
                 <div class="h-centerGroup">
@@ -41,30 +44,6 @@
         </div>
     </div>
 
-    <script type="text/javascript">
-        const pageHeaderElement = document.getElementById('pageHeaderPanel');
-        const pageFooterElement = document.getElementById('pageFooterPanel');
-        const pageBodyElement = document.getElementById('pageBodyPanel');
-
-        const loadFooterDate = () => {
-            const dateLbl = document.getElementById('footerCopyrightLbl');
-            dateLbl.innerText = `©${new Date().getFullYear()} - Banka Ltd `;
-        };
-
-        window.onload = (loadEvent) => {
-            loadFooterDate();
-        };
-        
-        window.onscroll = (scrollEvent) => {
-            if(scrollY >= 9){
-                pageHeaderElement.style.boxShadow = '0px 0px 0px 8px rgba(12, 247, 3, 0.2)';
-            }
-            else{
-                pageHeaderElement.style.boxShadow = '0px 0px 0px 0px rgba(0, 0, 0, 0)';
-            }
-        };
-
-       
-    </script>
+    <script type="text/javascript" src="./scripts/layout.js"> </script>
 </body>
 </html>
