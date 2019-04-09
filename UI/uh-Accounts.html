@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <link rel="stylesheet" href="./css/font-awesome.css"/>
-    <link rel="stylesheet" href="./css/site.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    <link rel="stylesheet" href="./css/Site.css">
     <link rel="stylesheet" href="./css/userHomePage.css">
     <script type="text/javascript" src="./scripts/misc.js"></script>
-    <title>Home - Banka</title>
+    <script type="text/javascript" src="./scripts/userHomepage.js"></script>
+    <title>Accounts - Banka</title>
 </head>
 <body>
     <div>
@@ -76,12 +77,27 @@
                     <div class="splitPanel-Right">
                         <br/>
                         <div id="rightPanelContainer">
+                            <div>
+                                <label class="userHomeLabel">
+                                    Accounts
+                                </label>
+                                <label id="accountsCountLabel">
 
+                                </label>
+
+                                <a class="actionBtn" href="./CreateBankAccount.html" target="_blank">
+                                    <b class="fa fa-plus"></b> Create new account
+                                </a>
+                                <br/>
+                                <br/>
+                            </div>
+
+                            <div id="userAccountsPanel"> </div>
                         </div>
                     </div>
                 </div>
 
-                <script type="text/javascript" src="./scripts/userHomepage.js"></script>
+                <script type="text/javascript" src="./scripts/uh-Accounts.js"> </script>
             </div>
 
         </div>

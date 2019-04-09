@@ -4,6 +4,7 @@ const usersPanel = document.getElementById('usersPanel');
 const searchInputElement = document.getElementById('searchInput');
 const searchItemsDDListPanel = document.getElementById('searchItemsDDList');
 
+const allAccountsPanel = document.getElementById('allAccountsPanel');
 const navigationPanel = document.getElementById('navigationPanel');
 const accountResultsNavigationLabel = document.getElementById('accountResultItemsRangeInfo');
 const accountsListPanel = document.getElementById('accountsListContainer');
@@ -58,7 +59,7 @@ window.addEventListener('load', (loadEvent) => {
             balance: 9000123.76
         }
     ];
-    
+
     // use the commented lines below to test the page navigation functions.
     // for (let i =0; i<12; i++){
     // 	testAccountsData.push({
@@ -71,12 +72,10 @@ window.addEventListener('load', (loadEvent) => {
     // 		balance: 9000123.76
     // 	});
     // }
-    
+
     renderBankAccountItemsRangeInfo(testAccountsData);
     renderBankAccountsData(testAccountsData);
 });
-
-const getShortDate = (dateObj) => `${dateObj.getDay()}/${dateObj.getMonth()}/${dateObj.getFullYear()}`;
 
 // #region ------------------>> Rendering functions.
 
@@ -140,7 +139,7 @@ const renderBankAccountsData = (accountsResultsInfo) => {
             accountsListContent += `<div><b>Number: </b><label>${accountNumber}</label></div>`;
             accountsListContent += `<div><b>Created On: </b><label>${getShortDate(accountCreatedOn)}</label></div>`;
             accountsListContent += `<div> <b>Balance: </b><label>${accountBalance}</label></div>`;
-            
+
             accountsListContent +=`<div class="h-centerGroup"><button class="listItemActionBtn" onclick="viewThisBankAccountRecord(${accountId})">`;
             accountsListContent += '<b title="View More" alt="View More" class="fa fa-ellipsis-h"></b> </button></div>';
             accountsListContent += '</div>';
@@ -152,7 +151,6 @@ const renderBankAccountsData = (accountsResultsInfo) => {
 };
 
 const viewThisBankAccountRecord = (accountId) => {
-
     // TODO: Get the transactions made with this account number.
     let testTransactionsData = [
         {
@@ -167,7 +165,7 @@ const viewThisBankAccountRecord = (accountId) => {
         }
     ];
 
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 5; i++) {
         testTransactionsData.push({
             id: 0,
             createdOn: new Date(2018, 2, 15),
@@ -178,7 +176,7 @@ const viewThisBankAccountRecord = (accountId) => {
             oldBalance: 120000,
             newBalance: 198123.35
         });
-        
+
     }
     renderBankAccountRecord(accountId, testTransactionsData);
 };
@@ -186,7 +184,7 @@ const viewThisBankAccountRecord = (accountId) => {
 const renderBankAccountRecord = (accountId, bankAccountTransactions) => {
     const bankAccountData = bankAccountsData.find(item => item.id === accountId);
     let accountRecordHtml = '<div>';
-    
+
     accountRecordHtml += `<div><label><b>ID: </b></label> <label>${bankAccountData.id}</label></div>`;
     accountRecordHtml += `<div><label><b>Account number: </b></label> <label>${bankAccountData.accountNumber}</label></div>`;
     accountRecordHtml += `<div><label><b>Created on: </b></label> <label>${getShortDate(bankAccountData.createdOn)}</label></div>`;
@@ -194,13 +192,13 @@ const renderBankAccountRecord = (accountId, bankAccountTransactions) => {
     accountRecordHtml += `<div><label><b>Type: </b></label> <label>${bankAccountData.type}</label></div>`;
     accountRecordHtml += `<div><label><b>Status: </b></label> <label>${bankAccountData.status}</label></div>`;
     accountRecordHtml += `<div><label><b>Balance: </b></label> <label>${bankAccountData.balance}</label></div>`;
-    
+
     accountRecordHtml += '<br/><div class="h-centerText"><b> Account Transactions</b></div><hr class="fullDemarcation"/>';
     accountRecordHtml += '<div class="transactionPanel">';
     for (let i = 0; i < bankAccountTransactions.length; i++) {
         const accountTransaction = bankAccountTransactions[i];
         accountRecordHtml += '<div class="listItemType1">';
-        
+
         accountRecordHtml += `<div><label><b>ID: </b></label> <label>${accountTransaction.id}</label></div>`;
         accountRecordHtml += `<div><label><b>Created on: </b></label> <label>${getShortDate(accountTransaction.createdOn)}</label></div>`;
         accountRecordHtml += `<div><label><b>Type: </b></label> <label>${accountTransaction.type}</label></div>`;
@@ -208,32 +206,34 @@ const renderBankAccountRecord = (accountId, bankAccountTransactions) => {
         accountRecordHtml += `<div><label><b>Transaction Amount: </b></label> <label>${accountTransaction.amount}</label></div>`;
         accountRecordHtml += `<div><label><b>Old Account Balance: </b></label> <label>${accountTransaction.oldBalance}</label></div>`;
         accountRecordHtml += `<div><label><b>New Account Balance: </b></label> <label>${accountTransaction.newBalance}</label></div>`;
-        
+
         accountRecordHtml += '</div>';
     }
-    accountRecordHtml += '</div><br/><div>';
+    accountRecordHtml += '</div><br/><div class="h-centerGroup">';
 
     accountRecordHtml += `<button class="dangerBtn" onclick="deletePreviewAccount(${accountId})">Delete This Account</button>`;
     accountRecordHtml += `<button class="actionBtn" onclick="closeAccountPreview()">Close</button>`;
 
     accountRecordHtml += '</div></div>';
-    
+
     accountRecordContainer.innerHTML = accountRecordHtml;
-    
-    accountRecordPanel.style.display = 'block';
-    
-    bankAccountsPanelElement.addEventListener('mousedown', (mouseDownEvent) => {
-        if (mouseDownEvent.target.getAttribute('data-path') === 'accountRecord') {
-            closeAccountPreview();
-        }
-    });
+    // accountRecordPanel.style.display = 'block';
+    accountRecordPanel.setAttribute('class', 'active');
+    allAccountsPanel.setAttribute('class', 'inactive');
+
+    // bankAccountsPanelElement.addEventListener('mousedown', (mouseDownEvent) => {
+    //     if (mouseDownEvent.target.getAttribute('data-path') === 'accountRecord') {
+    //         closeAccountPreview();
+    //     }
+    // });
 
 };
 
 // #endregion
 
 const closeAccountPreview = () => {
-    accountRecordPanel.style.display = 'none';
+    accountRecordPanel.setAttribute('class', 'inactive');
+    allAccountsPanel.setAttribute('class', 'active');
 };
 
 const deletePreviewAccount = (accountId) => {
@@ -257,7 +257,7 @@ const navigateAcountsPanelLeft = () => {
         accountListPages[accountItemsPageIndex].setAttribute('class', 'accountsListPage-Inactive');
         accountListPages[accountItemsPageIndex - 1].setAttribute('class', 'accountsListPage-Active');
         accountItemsPageIndex--;
-        
+
         const pageRange = GetStartAndEndOfSearchResults();
         var updatedNavInfoStr = `${pageRange[0]} - ${pageRange[1]} from ${accountResultsCount} (Page ${accountItemsPageIndex + 1})`;
         accountResultsNavigationLabel.innerText = updatedNavInfoStr;
@@ -312,8 +312,8 @@ const getIndexedAccountItems = () => {
                 ItemIndex: j,
                 AccountNumber: accountNumber
             };
-            flattenedAcountItems.push(indexedData);                    
-        }                
+            flattenedAcountItems.push(indexedData);
+        }
     }
     return flattenedAcountItems;
 };
@@ -321,8 +321,8 @@ const getIndexedAccountItems = () => {
 const searchInputElement_OnChange  = () => {
     // const searchProperty = searchTypeComboBox.children[searchTypeComboBox.selectedIndex].innerText.trim();
     const searchQuery = searchInputElement.value.trim();
-    
-    if (searchQuery.length > 2) {
+
+    if (searchQuery.length > 0) {
         const indexedAccountItems = getIndexedAccountItems();
         let searchResultItems = [];
         const equalItems = [];
@@ -372,20 +372,20 @@ const searchInputElement_OnChange  = () => {
             }
         }
         searchResultItems = equalItems.concat(beginsWithItems, endsWithItems, containsItems);
-        
+
         searchItemsDDListPanel.innerHTML = renderSearchResultItems(searchResultItems);
         searchItemsDDListPanel.style.display = 'block';
     } else {
         closeSearchListPanel();
     }
-    
+
 };
 
 const renderSearchResultItems = (searchResultItems) => {
     let searchResultHtml = '';
 
     for (let a = 0; a < searchResultItems.length; a++) {
-        const element = searchResultItems[a];                
+        const element = searchResultItems[a];
         const labelText = element.Value.AccountNumber;
 
         const leftStr = element.Start > 0 ? labelText.substring(0, element.Start): '';
@@ -417,7 +417,7 @@ const navigateToResult = (pageIndex, itemIndex) => {
             navigateAcountsPanelLeft();
         }
     }
-    
+
     itemElement.setAttribute('onmousedown', `turnOffHighlightAttribute_OnMouseDown(${pageIndex}, ${itemIndex}, "${classValue}")`);
     itemElement.setAttribute('class', `${classValue} highlight`);
     closeSearchListPanel();
@@ -431,4 +431,3 @@ const turnOffHighlightAttribute_OnMouseDown = (pageIndex, itemIndex, defaultClas
 };
 
 // #endregion
-

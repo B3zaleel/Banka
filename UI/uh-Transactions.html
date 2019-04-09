@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <link rel="stylesheet" href="./css/font-awesome.css"/>
-    <link rel="stylesheet" href="./css/site.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    <link rel="stylesheet" href="./css/Site.css">
     <link rel="stylesheet" href="./css/userHomePage.css">
     <script type="text/javascript" src="./scripts/misc.js"></script>
-    <title>Home - Banka</title>
+    <script type="text/javascript" src="./scripts/userHomepage.js"></script>
+    <title>Transactions - Banka</title>
 </head>
 <body>
     <div>
@@ -49,11 +50,11 @@
                                 </span>
                             </span>
 
-                            <button class="sideBtn checked" data-btnId="0" data-panelName="accounts">
+                            <button class="sideBtn" data-btnId="0" data-panelName="accounts">
                                 <img class="sb-accountsImg"/>
                                 <label>Accounts</label>
                             </button>
-                            <button class="sideBtn" data-btnId="1" data-panelName="transactions">
+                            <button class="sideBtn checked" data-btnId="1" data-panelName="transactions">
                                 <img class="sb-transactionsImg"/>
                                 <label>Transactions</label>
                             </button>
@@ -76,12 +77,34 @@
                     <div class="splitPanel-Right">
                         <br/>
                         <div id="rightPanelContainer">
+                            <div>
+                                <label class="userHomeLabel">
+                                    Transactions
+                                </label>
 
+                                <br/>
+                                <label>
+                                    <b>
+                                        Account Number:
+                                    </b>
+                                </label>
+
+                                <select id="accountNumbersComboBox" class="formPanelSelect" title="Select Account Number">
+                                    <option>437347772</option>
+                                </select>
+
+                                <label id="accountTransactionsCountLabel"> </label>
+
+                                <br/>
+                                <br/>
+                            </div>
+
+                            <div id="accountTransactionsPanel"> </div>
                         </div>
                     </div>
                 </div>
 
-                <script type="text/javascript" src="./scripts/userHomepage.js"></script>
+                <script type="text/javascript" src="./scripts/uh-Transactions.js"> </script>
             </div>
 
         </div>
