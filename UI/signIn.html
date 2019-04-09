@@ -21,43 +21,57 @@
 
         <div id="pageBodyPanel" class="pageBody">
             <div>
+                <br/>
                 <div class="h-centerGroup">
-                    <div class="formPanel">
+                    <div class="errorPanel negative" id="inputErrorPanel">
+                    </div>
+                </div>
+
+                <div class="h-centerGroup">
+                    <div class="formPanel signIn">
                         <div class="formPanelRow">
                             <span class="formPanelLeftItem">
-                                <label class="formPanelLabel required-Lbl">
+                                <label class="formPanelLabel required-Label">
                                     Email
                                 </label>
                             </span>
                             <span class="formPanelRightItem">
                                 <input type="email" class="formPanelInput" name="registeredUserEmail" placeholder="marcus@qmail.com" required="required"/>
-                            </span>                
+                            </span>
                         </div>
-            
+
                         <div class="formPanelRow">
                             <span class="formPanelLeftItem">
-                                <label class="formPanelLabel required-Lbl">
+                                <label class="formPanelLabel required-Label">
                                     Password
                                 </label>
                             </span>
                             <span class="formPanelRightItem">
                                 <input type="password" class="formPanelInput" name="registeredUserPassword" id="registeredUserPassword" required="required"/>
-                            </span>                
+                            </span>
                         </div>
-            
+
                         <div class="h-centerGroup">
                             <button id="signInBtn" class="actionBtn">
                                 Sign In
                             </button>
                         </div>
-            
+
+                        <br/>
+                        <span class="h-centerGroup">
+                            <span>
+                                <label>Forgot password?</label>
+                                <a class="inline" href="#">Reset Password</a>
+                            </span>
+                        </span>
                     </div>
-            
+
                 </div>
+                <script type="text/javascript"></script>
             </div>
-            
+
         </div>
-        
+
         <div id="pageFooterPanel" class="pageFooter">
             <hr class="footerLine"/>
             <footer >
@@ -71,7 +85,7 @@
                 <div class="h-centerGroup">
                     <label id="footerCopyrightLbl"></label>
                 </div>
-                
+
             </footer>
         </div>
     </div>
