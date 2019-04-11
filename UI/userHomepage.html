@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="stylesheet" href="./css/font-awesome.css"/>
+    <link rel="stylesheet" href="./css/site.css"/>
+    <link rel="stylesheet" href="./css/userHomePage.css">
+    <script type="text/javascript" src="./scripts/misc.js"></script>
+    <title>Home - Banka</title>
+</head>
+<body>
+    <div>
+        <div id="pageHeaderPanel" class="pageHeader">
+            <button id="sideBarToggleBtn" class="sideBarToggleBtn">
+                <b class="fa fa-bars"></b>
+            </button>
+            <a class="homeLink" href="#">
+                <!-- <img/> -->
+                <label>
+                    Banka
+                </label>
+            </a>
+        </div>
+
+        <div id="pageBodyPanel" class="pageBody">
+            <div>
+                <div class="splitPanel">
+                    <div id="sideBar" class="splitPanel-Left closed" data-viewState="close">
+                        <div class="sideBarContent">
+                            <span>
+                                <span class="h-centerGroup">
+                                    <img class="profilePic" id="profilePic" src="./images/testProfilePic.jpg"/>
+                                </span>
+                                <span class="profileDetails-Container">
+                                    <span class="profileDetails">
+                                        <span class="h-centerGroup">
+                                            <label id="profileNames">
+                                                Marcus Wood
+                                            </label>
+                                        </span>
+                                        <span class="h-centerGroup">
+                                            <label id="profileEmail">
+                                                marcus@qmail.com
+                                            </label>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+
+                            <button class="sideBtn checked" data-btnId="0" data-panelName="accounts">
+                                <img class="sb-accountsImg"/>
+                                <label>Accounts</label>
+                            </button>
+                            <button class="sideBtn" data-btnId="1" data-panelName="transactions">
+                                <img class="sb-transactionsImg"/>
+                                <label>Transactions</label>
+                            </button>
+                            <button class="sideBtn" data-btnId="2" data-panelName="notifications">
+                                <img class="sb-notifiationsImg"/>
+                                <label>Notifications</label>
+                            </button>
+                            <button class="sideBtn" data-btnId="3" data-panelName="settings">
+                                <img class="sb-settingsImg"/>
+                                <label>Settings</label>
+                            </button>
+                            <button class="sideBtn" data-btnId="4" data-panelName="helpAndFeedback">
+                                <img class="sb-help-FeedbackImg"/>
+                                <label>Help & Feedback</label>
+                            </button>
+
+                        </div>
+                    </div>
+
+                    <div class="splitPanel-Right">
+                        <br/>
+                        <div id="rightPanelContainer">
+
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript" src="./scripts/userHomepage.js"></script>
+            </div>
+
+        </div>
+
+        <div id="pageFooterPanel" class="pageFooter">
+            <hr class="footerLine"/>
+            <footer >
+                <div class="h-centerGroup">
+                    <div>
+                        <a href="#">About</a>
+                        <!-- <a href="./PrivacyPolicy.html">Privacy Policy</a> -->
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+                <div class="h-centerGroup">
+                    <label id="footerCopyrightLbl"></label>
+                </div>
+
+            </footer>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./scripts/layout.js"> </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    <link rel="stylesheet" href="./css/site.css">
+    <title>Make Transaction - Banka</title>
+</head>
+<body>
+    <div>
+        <div id="pageHeaderPanel" class="pageHeader">
+            <a class="homeLink" href="#">
+                <!-- <img/> -->
+                <label>
+                    Banka
+                </label>
+            </a>
+        </div>
+
+        <div id="pageBodyPanel" class="pageBody">
+            <div>
+                <div class="h-centerText">
+                    <h3>
+                        Please fill in the required information <br/> below to make the transaction.
+                    </h3>
+                </div>
+
+                <div class="h-centerGroup">
+                    <div class="errorPanel negative" id="inputErrorPanel">
+                    </div>
+                </div>
+
+                <div class="h-centerGroup">
+                    <div class="formPanel makeTransaction">
+
+                        <div class="formPanelRow">
+                            <span class="formPanelLeftItem">
+                                <label class="formPanelLabel required-Label ">
+                                    Account Number
+                                </label>
+                            </span>
+                            <span class="formPanelRightItem">
+                                <input id="accountNumberInput" class="formPanelInput" type="number" name="accountNumber" required="required"/>
+                            </span>
+                        </div>
+
+                        <div class="formPanelRow">
+                            <span class="formPanelLeftItem">
+                                <label class="formPanelLabel">
+                                    Transaction Type
+                                </label>
+                            </span>
+                            <span class="formPanelRightItem">
+                                <select id="transactionTypeComboBox" name="transactionType" class="formPanelSelect">
+                                    <option value="credit" selected="selected"> Credit </option>
+                                    <option value="debit"> Debit </option>
+                                </select>
+                            </span>
+                        </div>
+
+                        <div class="formPanelRow">
+                            <span class="formPanelLeftItem">
+                                <label class="required-Label formPanelLabel">
+                                    Amount
+                                </label>
+                            </span>
+                            <span class="formPanelRightItem">
+                                <input id="ammountInput" class="formPanelInput" type="text" name="transactionAmount" pattern="(\d+|\d*\.\d+)" required="required"/>
+                            </span>
+                        </div>
+
+                        <div class="h-centerGroup">
+                            <button id="makeTransaction" class="actionBtn">
+                                Make Transaction
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                </script>
+            </div>
+
+        </div>
+
+        <div id="pageFooterPanel" class="pageFooter">
+            <hr class="footerLine"/>
+            <footer >
+                <div class="h-centerGroup">
+                    <div>
+                        <a href="#">About</a>
+                        <!-- <a href="./PrivacyPolicy.html">Privacy Policy</a> -->
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+                <div class="h-centerGroup">
+                    <label id="footerCopyrightLbl"></label>
+                </div>
+
+            </footer>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="./scripts/layout.js"> </script>
+</body>
+</html>
