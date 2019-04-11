@@ -36,7 +36,7 @@ window.addEventListener('load', (loadEvent) => {
             isActivated: true
         }
     ];
-    
+
     renderUserAccountItemsRangeInfo(testUsersData);
     renderUserAccountsData(testUsersData);
 });
@@ -54,7 +54,7 @@ const renderUserAccountItemsRangeInfo = (accountsResultsInfo) => {
         maxEntries = accountsResultsInfo.length;
         numberOfPages = 1;
         pagesNumberOfItems.push(maxEntries);
-    } 
+    }
     else {
         const resultLabel = `1 - 10 from ${accountsResultsInfo.length}`;
         usersResultsNavigationLabel.innerText = resultLabel;
@@ -81,13 +81,13 @@ const renderUserAccountsData = (accountsResultsInfo) => {
     usersAccountData = accountsResultsInfo;
     let startIndex = 0;
     let endIndex = 0;
-    let usersListContentHtml = '';
+    let usersListContentHtmlArr = [];
 
     for (let k = 0; k < numberOfPages; k++) {
         startIndex = endIndex;
         endIndex = startIndex + pagesNumberOfItems[k];
         const classValue = k === 0 ? 'accountsListPage-Active':'accountsListPage-Inactive';
-        usersListContentHtml += `<div class="${classValue}" data-id="${k}">`;
+        usersListContentHtmlArr.push(`<div class="${classValue}" data-id="${k}">`);
         for (let i = startIndex; i < endIndex; i++) {
             const accountId = accountsResultsInfo[i].id;
             const accountEmail = accountsResultsInfo[i].email;
@@ -99,34 +99,36 @@ const renderUserAccountsData = (accountsResultsInfo) => {
             const accountActivatedStr = accountActivated ? 'yes' : 'no';
             const statusGlyphClass = getUserAccountStatusBtnClass(accountActivated);
             const accountIsAdmin = accountsResultsInfo[i].isAdmin ? 'yes' : 'no';
-            
-            usersListContentHtml += `<div class="listItemType1"`
-                + ` data-id="${accountId}"`
-                + ` data-email="${accountEmail}"`
-                + ` data-firstName="${accountFirstName}"`
-                + ` data-lastName="${accountLastName}"`
-                + ` data-type="${accountType}"`
-                + ` data-isAdmin="${accountIsAdmin}"`
-                + ` data-isActivated="${accountActivatedStr}">`;
 
-            usersListContentHtml += `<div> <b>ID: </b> <label>${accountId}</label> </div>`;
-            // usersListContentHtml += `<div><b>Created On: </b><label>${getShortDate(accountCreatedOn)}</label></div>`;
-            usersListContentHtml += `<div> <b>First Name: </b> <label>${accountFirstName}</label> </div>`;
-            usersListContentHtml += `<div> <b>Last Name: </b> <label>${accountLastName}</label> </div>`;
-            usersListContentHtml += `<div> <b>Email: </b> <label>${accountEmail}</label> </div>`;
-            usersListContentHtml += `<div> <b>Type: </b> <label>${accountType}</label> </div>`;
-            usersListContentHtml += `<div> <b>Administrator: </b> <label>${accountIsAdmin}</label> </div>`;
-            
-            usersListContentHtml += `<div class="h-centerGroup actionPanel">`
-                +` <button class="listItemActionBtn" onclick="changeAccountStatus_OnClick('${accountId}')">`
-                +` <b class="${statusGlyphClass}"></b> </button> </div>`;
-            
-            usersListContentHtml += '</div>';
+            usersListContentHtmlArr.push(`<div class="listItemType1"`);
+            usersListContentHtmlArr.push(` data-id="${accountId}"`);
+            usersListContentHtmlArr.push(` data-email="${accountEmail}"`);
+            usersListContentHtmlArr.push(` data-firstName="${accountFirstName}"`);
+            usersListContentHtmlArr.push(` data-lastName="${accountLastName}"`);
+            usersListContentHtmlArr.push(` data-type="${accountType}"`);
+            usersListContentHtmlArr.push(` data-isAdmin="${accountIsAdmin}"`);
+            usersListContentHtmlArr.push(` data-isActivated="${accountActivatedStr}">`);
+
+            usersListContentHtmlArr.push(`<div> <b>ID: </b> <label>${accountId}</label> </div>`);
+            usersListContentHtmlArr.push(`<div> <b>First Name: </b> <label>${accountFirstName}</label> </div>`);
+            usersListContentHtmlArr.push(`<div> <b>Last Name: </b> <label>${accountLastName}</label> </div>`);
+            usersListContentHtmlArr.push(`<div> <b>Email: </b> <label>${accountEmail}</label> </div>`);
+            usersListContentHtmlArr.push(`<div> <b>Type: </b> <label>${accountType}</label> </div>`);
+            usersListContentHtmlArr.push(`<div> <b>Administrator: </b> <label>${accountIsAdmin}</label> </div>`);
+
+            usersListContentHtmlArr.push(`<div class="h-centerGroup actionPanel">`);
+            usersListContentHtmlArr.push(` <button class="listItemActionBtn" onclick="changeAccountStatus_OnClick('${accountId}')">`);
+            usersListContentHtmlArr.push(` <b class="${statusGlyphClass}"></b> </button>`);
+            usersListContentHtmlArr.push('<button class="listItemActionBtn danger">');
+            usersListContentHtmlArr.push('<b class="fa fa-close"> </b>');
+            usersListContentHtmlArr.push('</button>');
+
+            usersListContentHtmlArr.push(' </div></div>');
         }
-        usersListContentHtml += '</div>';
+        usersListContentHtmlArr.push('</div>');
     }
 
-    usersListPanel.innerHTML = usersListContentHtml;
+    usersListPanel.innerHTML = usersListContentHtmlArr.join('');
 };
 
 const navigateAcountsPanelLeft = () => {
@@ -139,7 +141,7 @@ const navigateAcountsPanelLeft = () => {
         accountListPages[accountItemsPageIndex].setAttribute('class', 'accountsListPage-Inactive');
         accountListPages[accountItemsPageIndex - 1].setAttribute('class', 'accountsListPage-Active');
         accountItemsPageIndex--;
-        
+
         const pageRange = GetStartAndEndOfCurrentPage();
         var updatedNavInfoStr = `${pageRange[0]} - ${pageRange[1]} from ${usersResultsCount}`;
         usersResultsNavigationLabel.innerText = updatedNavInfoStr;
@@ -174,8 +176,6 @@ const GetStartAndEndOfCurrentPage = () => {
     }
     return [start, end];
 };
-
-const getShortDate = (dateObj) => `${dateObj.getDay()}/${dateObj.getMonth()}/${dateObj.getFullYear()}`;
 
 const getUserAccountStatusBtnClass = (accountActivated) => {
     let resultClass = 'fa fa-unlock';
@@ -212,7 +212,7 @@ const changeAccountStatus_OnClick = (accountId) => {
 
     const actionPanelElement = userListItem.getElementsByClassName('actionPanel')[0];
     const statusChangeBtn = actionPanelElement.getElementsByTagName('button')[0];
-    
+
     statusChangeBtn.children[0].setAttribute('class', getUserAccountStatusBtnClass(newStatus));
     userListItem.setAttribute('data-isActivated', newStatus);
 };
@@ -312,8 +312,8 @@ const getIndexedUserAccountItems = () => {
                 AccountFirstName: accountFirstName,
                 AccountLastName: accountLastName
             };
-            flattenedAcountItems.push(indexedData);                    
-        }                
+            flattenedAcountItems.push(indexedData);
+        }
     }
     return flattenedAcountItems;
 };
@@ -378,7 +378,7 @@ const navigateToResult = (pageIndex, itemIndex) => {
             navigateAcountsPanelLeft();
         }
     }
-    
+
     itemElement.setAttribute('onmousedown', `turnOffHighlightAttribute_OnMouseDown(${pageIndex}, ${itemIndex}, "${classValue}")`);
     itemElement.setAttribute('class', `${classValue} highlight`);
     closeSearchListPanel();

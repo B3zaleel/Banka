@@ -29,13 +29,18 @@
                         </h3>
                         <div>
                             <i>
-                                NB: Required fields begin with <span class="required-Lbl"></span>
+                                NB: Required fields begin with <span class="required-Label"></span>
                             </i>
                         </div>
                     </div>
-                    
-                    <div class="contentFitPanel">
-                        <div class="formPanel">
+
+                    <div class="h-centerGroup">
+                        <div class="errorPanel negative" id="inputErrorPanel">
+                        </div>
+                    </div>
+
+                    <div class="h-centerGroup">
+                        <div class="formPanel signUp">
                             <div class="formPanelRow" >
                                 <span class="formPanelLeftItem">
                                     <label class="formPanelLabel">
@@ -52,21 +57,21 @@
                                     </datalist>
                                 </span>
                             </div>
-                
+
                             <div class="formPanelRow">
                                 <span class="formPanelLeftItem">
-                                    <label class="signUpLabel required-Lbl formPanelLabel">
+                                    <label class="signUpLabel required-Label formPanelLabel">
                                         Last Name
                                     </label>
-                                </span>                                
+                                </span>
                                 <span class="formPanelRightItem">
                                     <input name="newUserLastName" id="newUserLastName" class="formPanelInput" type="text" required="required"/>
                                 </span>
                             </div>
-                
+
                             <div class="formPanelRow">
                                 <span class="formPanelLeftItem">
-                                    <label class="signUpLabel required-Lbl formPanelLabel">
+                                    <label class="signUpLabel required-Label formPanelLabel">
                                         First Name
                                     </label>
                                 </span>
@@ -74,7 +79,7 @@
                                     <input name="newUserFirstName" id="newUserFirstName" class="formPanelInput" type="text" required="required"/>
                                 </span>
                             </div>
-                
+
                             <div class="formPanelRow">
                                 <span class="formPanelLeftItem">
                                     <label class="formPanelLabel">
@@ -86,23 +91,23 @@
                                         <option value="female" selected="selected">Female</option>
                                         <option value="male">Male</option>
                                     </select>
-                                </span>                                
+                                </span>
                             </div>
-                
+
                             <div class="formPanelRow">
                                 <span class="formPanelLeftItem">
-                                    <label class="required-Lbl formPanelLabel">
+                                    <label class="required-Label formPanelLabel">
                                         Date of Birth
                                     </label>
                                 </span>
                                 <span class="formPanelRightItem">
                                     <input type="date" class="formPanelInput" name="newUserDOB" required="required"/>
-                                </span>                                
+                                </span>
                             </div>
-                
+
                             <div class="formPanelRow">
                                 <span class="formPanelLeftItem">
-                                    <label class="signUpLabel required-Lbl formPanelLabel">
+                                    <label class="signUpLabel required-Label formPanelLabel">
                                         Email
                                     </label>
                                 </span>
@@ -110,10 +115,10 @@
                                     <input type="email" class="formPanelInput" name="newUserEmail" id="newUserEmail" placeholder="marcus@qmail.com" required="required"/>
                                 </span>
                             </div>
-                
+
                             <div class="formPanelRow">
                                 <span class="formPanelLeftItem">
-                                    <label class="signUpLabel required-Lbl formPanelLabel">
+                                    <label class="signUpLabel required-Label formPanelLabel">
                                         Phone Number
                                     </label>
                                 </span>
@@ -121,21 +126,21 @@
                                     <input type="tel" class="formPanelInput" name="newUserPhoneNumber" id="newUserPhoneNumber" placeholder="0806 - 123 - 4569" required="required"/>
                                 </span>
                             </div>
-            
+
                             <div class="formPanelRow">
                                 <span class="formPanelLeftItem">
-                                    <label class="required-Lbl signUpLabel formPanelLabel">
+                                    <label class="required-Label signUpLabel formPanelLabel">
                                         Password
                                     </label>
                                 </span>
                                 <span class="formPanelRightItem">
                                     <input type="password" class="formPanelInput" name="newUserPassword" id="newUserPassword" required="required"/>
-                                </span>                                
+                                </span>
                             </div>
-            
+
                             <div class="formPanelRow">
                                 <span class="formPanelLeftItem">
-                                    <label class="signUpLabel required-Lbl formPanelLabel">
+                                    <label class="signUpLabel required-Label formPanelLabel">
                                         Confirm Password
                                     </label>
                                 </span>
@@ -143,11 +148,13 @@
                                     <input type="password" class="formPanelInput" name="newUserConfirmPassword" id="newUserConfirmPassword" required="required"/>
                                 </span>
                             </div>
-            
+
                             <div class="formPanelRow">
-                                <label class="formPanelLabel formPanelLeftItem">
-                                    Profile Picture
-                                </label>
+                                <span class="formPanelLeftItem">
+                                    <label class="formPanelLabel">
+                                        Profile Picture
+                                    </label>
+                                </span>
                                 <span class="formPanelRightItem">
                                     <div>
                                         <div id="signUpProfilePicContainer">
@@ -162,80 +169,101 @@
                                                 </g>
                                             </svg>
                                             <img id="signUpProfilePic" onmouseover="signUpProfilePicture_OnMouseOver()" onmouseout="signUpProfilePicture_OnMouseOut()" />
-                                                    
+
                                             <div id="signUpProfilePicNavBar" onmouseover="signUpProfilePicture_OnMouseOver()" onmouseout="signUpProfilePicture_OnMouseOut()" >
                                                 <button class="changePic" onclick="browsePicture_OnClick('signUpProfilePicInput', 'signUpProfilePic')" title="Change this photo">
                                                     <img src="./images/change.png"/>
                                                 </button>
-                                                <button class="removePic" title="Remove this photo">
+                                                <button class="removePic" onclick="removePicture_OnClick('signUpProfilePicInput', 'signUpProfilePic')" title="Remove this photo">
                                                     <img src="./images/remove.png"/>
                                                 </button>
                                             </div>
                                             <input type="file" id="signUpProfilePicInput"  accept=".jpeg, .jpg, .png, .bmp" hidden="hidden"/>
                                         </div>
                                     </div>
-                                </span>                                    
+                                </span>
                             </div>
 
-                            <div class="formPanelRow">
-                                <div class="formPanelCenterItem">
-                                    <span class="centerElement">
-                                            <div class="h-centerGroup">
-                                                    <button class="actionBtn" id="signUpBtn">Sign Up</button>
-                                                </div>
-                                    </span>
-                                    
-                                </div>
-                                
+                            <div class="h-centerGroup">
+                                <button class="actionBtn" id="signUpBtn">Sign Up</button>
                             </div>
-                            
+
+                            <br/>
+                            <span class="h-centerGroup">
+                                <span>
+                                    <span>
+                                        Already have an account?
+                                    </span>
+                                    <a class="inline" href="./signIn.html" target="_blank">Sign In</a>
+                                </span>
+                            </span>
                         </div>
                     </div>
-            
+
                 </div>
-            
+
                 <script type="text/javascript">
-            
+
                 const browsePicture_OnClick = (inputElementId, outputElementId) => {
+                    // file input element for opening the file select dialog and storing the image as a blob.
                     const pictureInputElement = document.getElementById(inputElementId);
+                    // img element for displaying the image.
                     const outputImageElement = document.getElementById(outputElementId);
                     pictureInputElement.addEventListener("change", (ev) => {
                         const fileArray = pictureInputElement.files;
-                        readImageFile(fileArray[0],outputImageElement);
+                        if (fileArray.length > 0){
+                            readImageFile(fileArray[0],outputImageElement);
+                        }
                     });
                     pictureInputElement.click();
                 };
-            
+
+                const toggleImgElement = (toggleCode) => {
+                    const pictureElement = document.getElementById('signUpProfilePic');
+                    if (toggleCode == 1) {
+                        pictureElement.style.visibility = "visible";
+                    }
+                    else {
+                        pictureElement.style.visibility = "hidden";
+                    }
+                };
+
                 const readImageFile = (file, pictureElement) => {
                     const reader = new FileReader();
                     reader.onload = (e) => {
                         pictureElement.src = e.target.result;
                     };
                     reader.readAsDataURL(file);
+                    toggleImgElement(1);
                 };
-            
+
                 const signUpProfilePicture_OnMouseOver = () => {
                     const navigationPanel = document.getElementById("signUpProfilePicNavBar");
                     navigationPanel.style.visibility = "visible";
                 };
-            
+
                 const signUpProfilePicture_OnMouseOut = () => {
                     const navigationPanel = document.getElementById("signUpProfilePicNavBar");
                     navigationPanel.style.visibility = "hidden";
                 };
-            
-                const removePicture_OnClick = ()=>{
-                    pictureElement.src = null;
+
+                const removePicture_OnClick = (inputElementId, outputElementId)=>{
+                    const pictureInputElement = document.getElementById(inputElementId);
+                    const outputImageElement = document.getElementById(outputElementId);
+                    outputImageElement.setAttribute('src', '');
+
+                    pictureInputElement.files = null;
+                    toggleImgElement(0);
                 };
-            
+
                 </script>
-            
+
             </div>
         </div>
-        
+
         <div id="pageFooterPanel" class="pageFooter">
             <hr class="footerLine"/>
-            <footer >
+            <footer>
                 <div class="h-centerGroup">
                     <div>
                         <a href="#">About</a>
@@ -246,11 +274,11 @@
                 <div class="h-centerGroup">
                     <label id="footerCopyrightLbl"></label>
                 </div>
-                
+
             </footer>
         </div>
     </div>
 
-    <script type="text/javascript" src="scripts/_layout.js"> </script>
+    <script type="text/javascript" src="./scripts/layout.js"> </script>
 </body>
 </html>

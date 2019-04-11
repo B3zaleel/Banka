@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/font-awesome.css">
-    <link rel="stylesheet" href="./css/site.css">
+    <link rel="stylesheet" href="./css/site.css"/>
+    <script type="text/javascript" src="./scripts/misc.js"></script>
     <title>Manage User Accounts - Banka</title>
 </head>
 <body>
@@ -21,28 +22,28 @@
 
         <div id="pageBodyPanel" class="pageBody">
             <div id="userAccountsPanel">
-                <div>
+                <h3>
                     Manage all user accounts here.
-                </div>
-            
+                </h3>
+
                 <div id="usersPanel">
                     <div id="navigationPanel">
                         <div>
                             <label><b>Search with: </b></label>
-                                            
+
                             <select id="searchTypeComboBox" class="formPanelSelect" onchange="searchTypeComboBox_OnChange()">
                                 <option value="ID">ID</option>
                                 <option value="FirstName">First Name</option>
                                 <option value="LastName">Last Name</option>
                                 <option value="Email">Email</option>
                             </select>
-                            
+
                             <div class="searchPanel">
                                 <input id="searchInput" type="search" class="formPanelInput" data-path="search" placeholder="Enter ID" oninput="searchInputElement_OnChange()"/>
                                 <div id="searchItemsDDList"> </div>
                             </div>
                         </div>
-                
+
                         <div class="resultsPageNavBar">
                             <button class="navigationBtn" onclick="navigateAcountsPanelLeft()" title="Move to the left page">
                                 <span class="fa fa-arrow-left"></span>
@@ -54,20 +55,20 @@
                                 0 from 0
                             </label>
                         </div>
-            
+
                     </div>
-                    
+
                     <div id="usersListContainer">
-                        
+
                     </div>
-            
+
                 </div>
-            
-                <script type="text/javascript" src="scripts/manageUserAccounts.js"> </script>
+
+                <script type="text/javascript" src="./scripts/manageUserAccounts.js"> </script>
             </div>
-                    
+
         </div>
-        
+
         <div id="pageFooterPanel" class="pageFooter">
             <hr class="footerLine"/>
             <footer >
@@ -81,11 +82,11 @@
                 <div class="h-centerGroup">
                     <label id="footerCopyrightLbl"></label>
                 </div>
-                
+
             </footer>
         </div>
     </div>
 
-    <script type="text/javascript" src="scripts/_layout.js"> </script>
+    <script type="text/javascript" src="./scripts/layout.js"> </script>
 </body>
 </html>

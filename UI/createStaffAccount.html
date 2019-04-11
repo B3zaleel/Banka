@@ -11,7 +11,7 @@
 <body>
     <div>
         <div id="pageHeaderPanel" class="pageHeader">
-            <a class="homeLink">
+            <a class="homeLink" href="#">
                 <!-- <img/> -->
                 <label>
                     Banka
@@ -22,16 +22,18 @@
         <div id="pageBodyPanel" class="pageBody">
             <div>
                 <div class="h-centerText">
-                    Please fill in the required fields and submit.<br/>
+                    <h3>
+                        Please fill in the required fields and submit.<br/>
+                    </h3>
                     <i>
-                        NB: Required fields begin with <span class="required-Lbl"></span>
+                        NB: Required fields begin with <span class="required-Label"></span>
                     </i>
                 </div>
                 <br/>
                 <div class="h-centerGroup">
                     <div class="formPanel">
-                
-                        <div class="formPanelRow">
+
+                        <div class="formPanelRow createStaffAccount">
                             <span class="formPanelLeftItem">
                                 <label class="formPanelLabel">
                                     Administrator Account
@@ -41,29 +43,29 @@
                                 <input id="isAdminCheckBox" type="checkbox" class="formPanelInput"/>
                             </span>
                         </div>
-                
+
                         <div class="formPanelRow">
                             <span class="formPanelLeftItem">
-                                <label class="required-Lbl formPanelLabel">
+                                <label class="required-Label formPanelLabel">
                                     Last Name
                                 </label>
                             </span>
                             <span class="formPanelRightItem">
                                 <input id="staffLastNameInput" name="newUserLastName" class="rightSignUpInput formPanelInput" type="text" required="required"/>
-                            </span>            
+                            </span>
                         </div>
-                
+
                         <div class="signUpInputRow formPanelRow">
                             <span class="formPanelLeftItem">
-                                <label class="required-Lbl formPanelLabel">
+                                <label class="required-Label formPanelLabel">
                                     First Name
                                 </label>
                             </span>
                             <span class="formPanelRightItem">
                                 <input id="staffFirstNameInput" name="newUserFirstName" class="formPanelInput" type="text" required="required"/>
-                            </span>            
+                            </span>
                         </div>
-                
+
                         <div class="formPanelRow">
                             <span class="formPanelLeftItem">
                                 <label class="formPanelLabel">
@@ -72,57 +74,57 @@
                             </span>
                             <span class="formPanelRightItem">
                                 <input id="staffEmailInput" type="email" class="formPanelInput"/>
-                            </span>            
+                            </span>
                         </div>
-                
+
                         <div class="formPanelRow">
                             <span class="formPanelLeftItem">
-                                <label class="required-Lbl formPanelLabel">
+                                <label class="required-Label formPanelLabel">
                                     Phone Number
                                 </label>
                             </span>
                             <span class="formPanelRightItem">
                                 <input id="staffPhoneNumberInput" type="tel" class="formPanelInput" name="newUserPhoneNumber" placeholder="(234) - 801- 2345 - 6789" required="required"/>
-                            </span>            
+                            </span>
                         </div>
-                
+
                         <div class="formPanelRow">
                             <span class="formPanelLeftItem">
-                                <label class="required-Lbl formPanelLabel">
+                                <label class="required-Label formPanelLabel">
                                     Password
                                 </label>
                             </span>
                             <span class="formPanelRightItem">
                                 <input id="staffPassword" type="password" class="formPanelInput" name="newUserPassword" required="required"/>
-                            </span>            
+                            </span>
                         </div>
-                
+
                         <div class="signUpInputRow formPanelRow">
                             <span class="formPanelLeftItem">
-                                <label class="required-Lbl formPanelLabel">
+                                <label class="required-Label formPanelLabel">
                                     Confirm Password
                                 </label>
                             </span>
                             <span class="formPanelRightItem">
                                 <input id="staffConfirmPassword" type="password" class="formPanelInput" name="newUserConfirmPassword" required="required"/>
-                            </span>            
+                            </span>
                         </div>
-                
+
                         <div class="h-centerGroup">
                             <button class="actionBtn">
                                 Create Staff Account
-                            </button> 
+                            </button>
                         </div>
-                
+
                     </div>
-                
+
                     <script type="text/javascript">
                     </script>
                 </div>
             </div>
-            
+
         </div>
-        
+
         <div id="pageFooterPanel" class="pageFooter">
             <hr class="footerLine"/>
             <footer >
@@ -136,11 +138,11 @@
                 <div class="h-centerGroup">
                     <label id="footerCopyrightLbl"></label>
                 </div>
-                
+
             </footer>
         </div>
     </div>
 
-    <script type="text/javascript" src="scripts/_layout.js"> </script>
+    <script type="text/javascript" src="./scripts/layout.js"> </script>
 </body>
 </html>
