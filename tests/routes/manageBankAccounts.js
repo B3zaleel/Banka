@@ -117,4 +117,48 @@ describe('Routes: Manage Bank Accounts', () => {
     });
   });
 
+  describe('Delete /api/v1/staff/:staffId/accounts/:accountNumber', () => {
+    describe('status 401', () => {
+      it('Throws error when the admin/staff id does not exist', (done) => {
+        request.delete('/api/v1/staff/70/accounts/1122336699')
+          .expect(401)
+          .end((err, res) => {
+            const expectedResult = {
+              status: 401,
+              error: 'A staff with the id, 70, does not exist.',
+            };
+            expect(res.body).to.eql(expectedResult);
+            done(err);
+          });
+      });
+
+      it('Throws error when the account number does not exist', (done) => {
+        request.delete('/api/v1/staff/15/accounts/5522336699')
+          .expect(401)
+          .end((err, res) => {
+            const expectedResult = {
+              status: 401,
+              error: 'The given account number, which is 5522336699, does not exist.',
+            };
+            expect(res.body).to.eql(expectedResult);
+            done(err);
+          });
+      });
+    });
+
+    describe('status 204', () => {
+      it('Shows the account deleted message when the admin/staff id and account number exist', (done) => {
+        request.delete('/api/v1/staff/15/accounts/1345678901')
+          .expect(200)
+          .end((err, res) => {
+            const expectedResult = {
+              status: 200,
+              message: 'Account successfully deleted.',
+            };
+            expect(res.body).to.eql(expectedResult);
+            done(err);
+          });
+      });
+    });
+  });
 });

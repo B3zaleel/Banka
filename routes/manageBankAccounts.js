@@ -44,4 +44,33 @@ module.exports = (bankaAPI) => {
     }
   });
 
+  bankaAPI.delete('/api/v1/staff/:staffId/accounts/:accountNumber', (req, res) => {
+    const [staffId, accountNumber] = [
+      Number.parseInt(req.params.staffId, 10),
+      Number.parseInt(req.params.accountNumber, 10)];
+    const staffAccountValidation = users.validateStaffId(staffId);
+
+    if (staffAccountValidation.valid) {
+      const accountDeletionResult = accounts.tryDeleteAccount(accountNumber, transactions);
+      if (accountDeletionResult.success) {
+        const successResult = {
+          status: 200,
+          message: 'Account successfully deleted.',
+        };
+        res.status(200).json(successResult);
+      } else {
+        const errorResult = {
+          status: 401,
+          error: accountDeletionResult.reason,
+        };
+        res.status(401).json(errorResult);
+      }
+    } else {
+      const errorResult = {
+        status: 401,
+        error: staffAccountValidation.reason,
+      };
+      res.status(401).json(errorResult);
+    }
+  });
 };
