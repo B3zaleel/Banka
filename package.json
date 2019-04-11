@@ -1,0 +1,50 @@
+{
+  "name": "banka",
+  "version": "1.1.1",
+  "description": "An API for handling Banka web app requests",
+  "main": "bankaAPI.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "npm run apidoc && node bankaAPI.js",
+    "startSimple": "node bankaAPI.js",
+    "test": "mocha tests/**/*.js",
+    "apidoc": "apidoc -i routes/ -o public/doc"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "consign": "^0.1.6",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "apidoc": "^0.17.7",
+    "chai": "^4.2.0",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^6.0.2",
+    "supertest": "^4.0.2"
+  },
+  "apidoc": {
+    "name": "Banka API - Documentation",
+    "template": {
+      "forceLanguage": "en"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/B3zaleel/Banka.git"
+  },
+  "author": "Bezaleel Olakunori <bezaleeloci@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/B3zaleel/Banka/issues"
+  },
+  "homepage": "https://github.com/B3zaleel/Banka#readme",
+  "keywords": [
+    "bank",
+    "restful",
+    "api"
+  ]
+}
