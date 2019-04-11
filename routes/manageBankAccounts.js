@@ -4,6 +4,35 @@ module.exports = (bankaAPI) => {
   const models = bankaAPI.get('models');
   const [users, accounts, transactions] = [models.users, models.accounts, models.transactions];
 
+  /**
+   * @api {patch} /api/v1/staff/:staffId/account/:accountNumber Change Account Status
+   * @apiGroup Account Management
+   * @apiParam {Integer} staffId The id of the admin/staff performing the status update.
+   * @apiParam {Integer} accountNumber The account number to update.
+   * @apiParam {String} status The new status to be given to the account.
+   * @apiParamExample {json} Input
+   * {
+   *    "status": "active"
+   * }
+   * @apiSuccess {Integer} status The HTTP success response code.
+   * @apiSuccess {Integer} accountNumber The account number that was updated.
+   * @apiSuccess {String} status The new status of the bank account.
+   * @apiSuccessExample {json} Success
+   * {
+   *    "status": 200,
+   *    "data": {
+   *        "accountNumber": 7885639847,
+   *        "status": "active"
+   *    }
+   * }
+   * @apiError {Integer} status The HTTP error status code.
+   * @apiError {String} error The error message.
+   * @apiErrorExample {json} Error
+   * {
+   *    "status": 401,
+   *    "error": "The given account number does not exist."
+   * }
+   */
   bankaAPI.patch('/api/v1/staff/:staffId/account/:accountNumber', (req, res) => {
     const [staffId, accountNumber, status] = [
       Number.parseInt(req.params.staffId, 10),
@@ -44,6 +73,26 @@ module.exports = (bankaAPI) => {
     }
   });
 
+  /**
+   * @api {delete} /api/v1/staff/:staffId/accounts/:accountNumber Delete Bank Account
+   * @apiGroup Account Management
+   * @apiParam {Integer} staffId The id of the admin/staff deleting the account.
+   * @apiParam {json} accountNumber The account number to delete.
+   * @apiSuccess {Integer} status The HTTP success response code.
+   * @apiSuccess {String} message The action succeeded message.
+   * @apiSuccessExample {json} Success
+   * {
+   *    "status": 200,
+   *    "message": "Account deleted successfully."
+   * }
+   * @apiError {Integer} status The HTTP error status code.
+   * @apiError {String} error The error message.
+   * @apiErrorExample {json} Error
+   * {
+   *    "status": 412,
+   *    "error": "The given bank account does not exist."
+   * }
+   */
   bankaAPI.delete('/api/v1/staff/:staffId/accounts/:accountNumber', (req, res) => {
     const [staffId, accountNumber] = [
       Number.parseInt(req.params.staffId, 10),

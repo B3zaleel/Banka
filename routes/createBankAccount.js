@@ -1,8 +1,63 @@
+const dataValidators = require('../libs/dataValidators');
 
 module.exports = (bankaAPI) => {
   const models = bankaAPI.get('models');
   const [users, accounts] = [models.users, models.accounts];
 
+  /**
+   * @api {post} /api/v1/user/:userId/accounts Create Bank Account
+   * @apiGroup Account Creation
+   * @apiParam {Integer} userId The id of the client to create the account for.
+   * @apiParam {String} state The state/region the client is using to create the account.
+   * @apiParam {String} branch The branch the client is creating the account at.
+   * @apiParam {String} type The type of account to create for the client.
+   * @apiParam {String} idType The id of the client to use for external validation.
+   * @apiParam {Integer} idNumber The id Number of the client's external id.
+   * @apiParam {String} idExpiryDate The expiry date of the client's id.(Format: dd/mm/yyyy)
+   * @apiParam {Float} openingBalance The client's opening balance.
+   * @apiParam {String} address1 The main address of the client.
+   * @apiParam {String} address2 The second address of the client.(Optional)
+   * @apiParamExample {json} Input
+   * {
+   *    "state": "Lagos",
+   *    "branch": "27 Qanter Lane, Kasoa",
+   *    "type": "current",
+   *    "idType": "International Passport",
+   *    "idNumber": 7788996633,
+   *    "idExpiryDate": "23/11/2025",
+   *    "openingBalance": 500000.00,
+   *    "address1": "17 Qanter Lane, Kasoa",
+   *    "address2": "5 Rosemary Drive, Adenta",
+   * }
+   * @apiSuccess {Integer} status The HTTP success response code.
+   * @apiSuccess {Integer} accountNumber The account number generated for the client.
+   * @apiSuccess {String} firstName The client's first name.
+   * @apiSuccess {String} lastName The client's last name.
+   * @apiSuccess {String} email The client's email.
+   * @apiSuccess {String} type The type of account the client created.
+   * @apiSuccess {Float} openingBalance The client's account opening balance.
+   * @apiSuccess {String} status The client's account status.
+   * @apiSuccessExample {json} Success
+   * {
+   *    "status": 201,
+   *    "data": {
+   *        "accountNumber": 4578963213,
+   *        "firstName": "Marcus",
+   *        "lastName": "Wood",
+   *        "email": "marcood@qmail.com",
+   *        "type": "savings",
+   *        "openingBalance": 75000.00,
+   *        "status": "active"
+   *    }
+   * }
+   * @apiError {Integer} status The HTTP error status code.
+   * @apiError {String} error The error message.
+   * @apiErrorExample {json} Error
+   * {
+   *    "status": 401,
+   *    "error": "The idExpiryDate is below the minimum expiry date."
+   * }
+   */
   bankaAPI.post('/api/v1/user/:userId/accounts', (req, res) => {
     const [userId, state, branch, type,
       idType, idNumber, idExpiryDate, openingBalance,
