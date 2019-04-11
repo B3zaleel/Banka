@@ -18,5 +18,5 @@ This application only supports a single bank, where users can sign up and create
 - [Signing up](https://b3zaleel.github.io/Banka/UI/signUp.html)
 - [Signing in](https://b3zaleel.github.io/Banka/UI/signIn.html)
 - [Creating a bank account](https://b3zaleel.github.io/Banka/UI/createBankAccount.html)
--[Viewing bank account profile](https://b3zaleel.github.io/Banka/UI/userHomepage.html)
--[Viewing account transaction history](https://b3zaleel.github.io/Banka/UI/uh-Transactions.html)
+- [Viewing bank account profile](https://b3zaleel.github.io/Banka/UI/userHomepage.html)
+- [Viewing account transaction history](https://b3zaleel.github.io/Banka/UI/uh-Transactions.html)
