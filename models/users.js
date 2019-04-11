@@ -61,6 +61,21 @@ const findClientById = (id) => {
   return result;
 };
 
+const findStaffById = (id) => {
+  const staffData = getUsers().find(item => item.id === id
+    && item.type === 'staff');
+  const result = staffData === undefined
+    ? {
+      user: staffData,
+      reason: `The staff with id, ${id}, does not exist.`,
+    } : {
+      user: staffData,
+      reason: '',
+    };
+
+  return result;
+};
+
 const findCashierById = (id) => {
   const cashierData = getUsers().find(item => item.id === id
     && item.type === 'staff' && item.isAdmin === false);
@@ -97,6 +112,20 @@ const validateClientId = (id) => {
     ? {
       valid: false,
       reason: `A client with the id, ${id}, does not exist.`,
+    } : {
+      valid: true,
+      reason: '',
+    };
+
+  return result;
+};
+
+const validateStaffId = (id) => {
+  const staffData = findStaffById(id);
+  const result = staffData.user === undefined
+    ? {
+      valid: false,
+      reason: `A staff with the id, ${id}, does not exist.`,
     } : {
       valid: true,
       reason: '',
@@ -185,6 +214,7 @@ module.exports = {
   findClientById: id => findClientById(id),
   findCashierById: id => findCashierById(id),
   validateClientId: id => validateClientId(id),
+  validateStaffId: id => validateStaffId(id),
   validateCashierId: id => validateCashierId(id),
   validateAdminId: id => validateAdminId(id),
   validateUser: userDetails => validateUser(userDetails),
