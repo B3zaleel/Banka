@@ -120,34 +120,37 @@ const renderBankAccountsData = (accountsResultsInfo) => {
     bankAccountsData = accountsResultsInfo;
     let startIndex = 0;
     let endIndex = 0;
-    let accountsListContent = '';
+    let accountsListContentArr = [];
 
     for (let k = 0; k < numberOfPages; k++) {
         startIndex = endIndex;
         endIndex = startIndex + pagesNumberOfItems[k];
         const classValue = k === 0 ? 'accountsListPage-Active':'accountsListPage-Inactive';
-        accountsListContent += `<div class="${classValue}" data-id="${k}">`;
+        accountsListContentArr.push(`<div class="${classValue}" data-id="${k}">`);
         for (let i = startIndex; i < endIndex; i++) {
             const accountNumber = accountsResultsInfo[i].accountNumber;
             const accountCreatedOn = accountsResultsInfo[i].createdOn;
             const accountBalance = accountsResultsInfo[i].balance;
             const accountId = accountsResultsInfo[i].id;
 
-            accountsListContent += `<div class="listItemType1" data-accountNumber="${accountNumber}" data-createdOn="${accountCreatedOn}" >`;
+            accountsListContentArr.push(`<div class="listItemType1" data-accountNumber="${accountNumber}" data-createdOn="${accountCreatedOn}" >`);
 
-            accountsListContent += `<div><b>ID: </b><label>${accountId}</label></div>`;
-            accountsListContent += `<div><b>Number: </b><label>${accountNumber}</label></div>`;
-            accountsListContent += `<div><b>Created On: </b><label>${getShortDate(accountCreatedOn)}</label></div>`;
-            accountsListContent += `<div> <b>Balance: </b><label>${accountBalance}</label></div>`;
+            accountsListContentArr.push(`<div><b>ID: </b><label>${accountId}</label></div>`);
+            accountsListContentArr.push(`<div><b>Number: </b><label>${accountNumber}</label></div>`);
+            accountsListContentArr.push(`<div><b>Created On: </b><label>${getShortDate(accountCreatedOn)}</label></div>`);
+            accountsListContentArr.push(`<div> <b>Balance: </b><label>${accountBalance}</label></div>`);
 
-            accountsListContent +=`<div class="h-centerGroup"><button class="listItemActionBtn" onclick="viewThisBankAccountRecord(${accountId})">`;
-            accountsListContent += '<b title="View More" alt="View More" class="fa fa-ellipsis-h"></b> </button></div>';
-            accountsListContent += '</div>';
+            accountsListContentArr.push(`<div class="h-centerGroup"><button class="listItemActionBtn" onclick="viewThisBankAccountRecord(${accountId})">`);
+            accountsListContentArr.push('<b title="View More" alt="View More" class="fa fa-ellipsis-h"></b> </button>');
+            accountsListContentArr.push('<button class="listItemActionBtn danger" title="Delete this account">');
+            accountsListContentArr.push('<b class="fa fa-close"> </b>');
+            accountsListContentArr.push('</button>');
+            accountsListContentArr.push('</div></div>');
         }
-        accountsListContent += '</div>';
+        accountsListContentArr.push('</div>');
     }
 
-    accountsListPanel.innerHTML = accountsListContent;
+    accountsListPanel.innerHTML = accountsListContentArr.join('');
 };
 
 const viewThisBankAccountRecord = (accountId) => {
