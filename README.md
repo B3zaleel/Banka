@@ -7,9 +7,6 @@
 Banka is a light-weight core banking application that powers banking operations like account creation, customer deposit and withdrawals.
 This application only supports a single bank, where users can sign up and create bank accounts online, but must visit one of the bank's branches to withdraw or deposit money.
 
-### Pivotal Tracker Board
-[Visit](https://www.pivotaltracker.com/n/projects/2319890)
-
 ### UI Page Templates
 - [Activating / deactivating user accounts](https://b3zaleel.github.io/Banka/UI/manageUserAccounts.html)
 - [Creating an admin / a staff user account](https://b3zaleel.github.io/Banka/UI/createStaffAccount.html)
