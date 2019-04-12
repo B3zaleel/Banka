@@ -6,20 +6,19 @@ module.exports = (bankaAPI) => {
   /**
    * @api {post} /api/v1/auth/signin Sign In
    * @apiGroup Authorization
-   * @apiParam {String} email Email of the user.
-   * @apiParam {String} password Password of the user.
-   * @apiParamExample {json} Input
+   * @apiParam {String} email The email of the user.
+   * @apiParam {String} password The password of the user.
+   * @apiParamExample {json} Input Example
    * {
    *    "email": "marcus@qmail.com",
    *    "password": "drowssap1234"
    * }
-   * @apiSuccess {Integer} status HTTP response code.
-   * @apiSuccess {Integer} id Id of authenticated user.
-   * @apiSuccess {String} firstName First name of authenticated user.
-   * @apiSuccess {String} lastName Last name of authenticated user.
-   * @apiSuccess {String} email Email of authenticated user.
-   * @apiSuccessExample {json} Success
-   * HTTP/1.1 200 OK
+   * @apiSuccess {Integer} status The HTTP response code.
+   * @apiSuccess {Integer} id The id of authenticated user.
+   * @apiSuccess {String} firstName The first name of authenticated user.
+   * @apiSuccess {String} lastName The last name of authenticated user.
+   * @apiSuccess {String} email The email of authenticated user.
+   * @apiSuccessExample {json} Success Example
    * {
    *    "status": 200,
    *    "data": {
@@ -29,10 +28,9 @@ module.exports = (bankaAPI) => {
    *        "email": "marcus@qmail.com"
    *    }
    * }
-   * @apiError {Integer} status HTTP error status code.
+   * @apiError {Integer} status The HTTP error status code.
    * @apiError {String} error The error message.
-   * @apiErrorExample {json} Error
-   * HTTP/1.1 401 Unauthorized
+   * @apiErrorExample {json} Error Example
    * {
    *    "status": 401,
    *    "error": "Incorrect password"
