@@ -6,8 +6,9 @@
   "scripts": {
     "start": "npm run apidoc && node bankaAPI.js",
     "startSimple": "node bankaAPI.js",
-    "test": "mocha tests/**/*.js",
-    "cover": "istanbul cover _mocha",
+    "test": "mocha test/**/*.js",
+    "test-with-coverage": "nyc --reporter=text mocha test/**/*.js",
+    "cover": "nyc mocha tests/**/*.js",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
     "apidoc": "apidoc -i routes/ -o public/doc"
   },
