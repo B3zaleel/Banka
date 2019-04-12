@@ -14,7 +14,7 @@ module.exports = (bankaAPI) => {
    * @apiParam {String} sex The sex of the client.
    * @apiParam {Integer} phoneNumber The phone number of the client.
    * @apiParam {String} dateOfBirth The date of birth of the client.(Format: dd/mm/yyyy)
-   * @apiParamExample {json} Input
+   * @apiParamExample {json} Input Example
    * {
    *    "lastName": "Gallagher",
    *    "firstName": "Joan",
@@ -31,7 +31,7 @@ module.exports = (bankaAPI) => {
    * @apiSuccess {String} firstName The client's first name.
    * @apiSuccess {String} lastName The client's last name.
    * @apiSuccess {String} email The client's email.
-   * @apiSuccessExample {json} Success
+   * @apiSuccessExample {json} Success Example
    * {
    *    "status": 201,
    *    "data": {
@@ -44,7 +44,7 @@ module.exports = (bankaAPI) => {
    * }
    * @apiError {Integer} status The HTTP error status code.
    * @apiError {Integer} error The error message.
-   * @apiErrorExample {json} Error
+   * @apiErrorExample {json} Error Example
    * {
    *    "status": 401,
    *    "error": "The passwords are not equal."

@@ -13,7 +13,7 @@ module.exports = (bankaAPI) => {
    * @apiParam {String} password The password of the new staff.
    * @apiParam {String} confirmPassword The password confirmation of the new staff.
    * @apiParam {Boolean} isAdmin The administrative status of the new staff.
-   * @apiParamExample {json} Input
+   * @apiParamExample {json} Input Example
    * {
    *    "firstName": "Jane",
    *    "lastName": "Gallagher",
@@ -22,12 +22,12 @@ module.exports = (bankaAPI) => {
    *    "confirmPassword": "password",
    *    "isAdmin": false
    * }
-   * @apiSuccess {Integer} status HTTP success response code.
-   * @apiSuccess {Integer} token The user authorization token.
+   * @apiSuccess {Integer} status The HTTP success status code.
+   * @apiSuccess {Integer} token The staff's authorization token.
    * @apiSuccess {Integer} firstName The staff's first name.
    * @apiSuccess {Integer} lastName The staff's last name.
    * @apiSuccess {Integer} email The staff's email.
-   * @apiSuccessExample {json} Success
+   * @apiSuccessExample {json} Success Example
    * {
    *    "status": 200,
    *    "data": {
@@ -39,7 +39,7 @@ module.exports = (bankaAPI) => {
    * }
    * @apiError {Integer} status The HTTP error status code.
    * @apiError {String} error The error message.
-   * @apiErrorExample {json}
+   * @apiErrorExample {json} Error Example
    * {
    *    "status": 401,
    *    "error": "The passwords are not equal."

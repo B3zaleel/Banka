@@ -3,9 +3,9 @@ module.exports = (bankaAPI) => {
   /**
    * @api {get} /api/v1/ API Status
    * @apiGroup Home
-   * @apiSuccess {String} status HTTP response code.
-   * @apiSuccess {String} message API welcome message.
-   * @apiSuccessExample {json} Success
+   * @apiSuccess {String} status The HTTP success status code.
+   * @apiSuccess {String} message The API welcome message.
+   * @apiSuccessExample {json} Success Example
    * {
    *    "status": 200,
    *    "message": "Hello and welcome to the Banka API."

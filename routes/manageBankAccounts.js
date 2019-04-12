@@ -10,14 +10,14 @@ module.exports = (bankaAPI) => {
    * @apiParam {Integer} staffId The id of the admin/staff performing the status update.
    * @apiParam {Integer} accountNumber The account number to update.
    * @apiParam {String} status The new status to be given to the account.
-   * @apiParamExample {json} Input
+   * @apiParamExample {json} Input Example
    * {
    *    "status": "active"
    * }
-   * @apiSuccess {Integer} status The HTTP success response code.
+   * @apiSuccess {Integer} status The HTTP success status code.
    * @apiSuccess {Integer} accountNumber The account number that was updated.
    * @apiSuccess {String} status The new status of the bank account.
-   * @apiSuccessExample {json} Success
+   * @apiSuccessExample {json} Success Example
    * {
    *    "status": 200,
    *    "data": {
@@ -27,7 +27,7 @@ module.exports = (bankaAPI) => {
    * }
    * @apiError {Integer} status The HTTP error status code.
    * @apiError {String} error The error message.
-   * @apiErrorExample {json} Error
+   * @apiErrorExample {json} Error Example
    * {
    *    "status": 401,
    *    "error": "The given account number does not exist."
