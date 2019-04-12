@@ -7,7 +7,7 @@
     "start": "npm run apidoc && node bankaAPI.js",
     "startSimple": "node bankaAPI.js",
     "test": "mocha test/**/*.js --exit",
-    "test-with-coverage": "nyc --reporter=text mocha test/**/*.js",
+    "test-with-coverage": "nyc --reporter=text mocha test/**/*.js --exit",
     "cover": "nyc mocha tests/**/*.js",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
     "apidoc": "apidoc -i routes/ -o public/doc"
