@@ -7,4 +7,4 @@ before_install:
   - npm install express consign body-parser
   - npm install mocha chai supertest mocha-lcov-reporter nyc coveralls --save-dev
 after_success:
-  - npm run test-with-coverage
+  - npm run coveralls
