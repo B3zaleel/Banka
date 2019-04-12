@@ -13,7 +13,7 @@ module.exports = (bankaAPI) => {
    * @apiParam {Integer} accountNumber The account number the transaction is being made with.
    * @apiParam {String} transactionType The type of transaction to make (debit / credit).
    * @apiParam {Float} amount The amount to be used in the transaction.
-   * @apiParamExample {json} Input
+   * @apiParamExample {json} Input Example
    * {
    *    "amount": 12785.00
    * }
@@ -23,7 +23,7 @@ module.exports = (bankaAPI) => {
    * @apiSuccess {Integer} cashierId The id of the cashier that made the transaction.
    * @apiSuccess {String} transactionType The type of the transaction made.
    * @apiSuccess {Float} accountBalance The funds remaining in the account used to make the transaction.
-   * @apiSuccessExample {json} Success
+   * @apiSuccessExample {json} Success Example
    * {
    *    "status": 200,
    *    "data": {
@@ -35,9 +35,9 @@ module.exports = (bankaAPI) => {
    *        "accountBalance": 70000.00
    *    }
    * }
-   * @apiError {Integer} status HTTP error response code.
+   * @apiError {Integer} status The HTTP error status code.
    * @apiError {String} error The error message.
-   * @apiErrorExample {json} Error
+   * @apiErrorExample {json} Error Example
    * {
    *    "status": 402,
    *    "error": "Insufficient funds."

@@ -10,14 +10,14 @@ module.exports = (bankaAPI) => {
    * @apiParam {Integer} userId The id of the client to create the account for.
    * @apiParam {String} state The state/region the client is using to create the account.
    * @apiParam {String} branch The branch the client is creating the account at.
-   * @apiParam {String} type The type of account to create for the client.
+   * @apiParam {String} type The type of account to create for the client.(savings/current)
    * @apiParam {String} idType The id of the client to use for external validation.
-   * @apiParam {Integer} idNumber The id Number of the client's external id.
+   * @apiParam {Integer} idNumber The id number of the client's external id.
    * @apiParam {String} idExpiryDate The expiry date of the client's id.(Format: dd/mm/yyyy)
    * @apiParam {Float} openingBalance The client's opening balance.
    * @apiParam {String} address1 The main address of the client.
    * @apiParam {String} address2 The second address of the client.(Optional)
-   * @apiParamExample {json} Input
+   * @apiParamExample {json} Input Example
    * {
    *    "state": "Lagos",
    *    "branch": "27 Qanter Lane, Kasoa",
@@ -29,7 +29,7 @@ module.exports = (bankaAPI) => {
    *    "address1": "17 Qanter Lane, Kasoa",
    *    "address2": "5 Rosemary Drive, Adenta",
    * }
-   * @apiSuccess {Integer} status The HTTP success response code.
+   * @apiSuccess {Integer} status The HTTP success status code.
    * @apiSuccess {Integer} accountNumber The account number generated for the client.
    * @apiSuccess {String} firstName The client's first name.
    * @apiSuccess {String} lastName The client's last name.
@@ -37,7 +37,7 @@ module.exports = (bankaAPI) => {
    * @apiSuccess {String} type The type of account the client created.
    * @apiSuccess {Float} openingBalance The client's account opening balance.
    * @apiSuccess {String} status The client's account status.
-   * @apiSuccessExample {json} Success
+   * @apiSuccessExample {json} Success Example
    * {
    *    "status": 201,
    *    "data": {
@@ -52,7 +52,7 @@ module.exports = (bankaAPI) => {
    * }
    * @apiError {Integer} status The HTTP error status code.
    * @apiError {String} error The error message.
-   * @apiErrorExample {json} Error
+   * @apiErrorExample {json} Error Example
    * {
    *    "status": 401,
    *    "error": "The idExpiryDate is below the minimum expiry date."
