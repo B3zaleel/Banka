@@ -24,4 +24,4 @@ This application only supports a single bank, where users can sign up and create
 - [Viewing account transaction history](https://b3zaleel.github.io/Banka/UI/uh-Transactions.html)
 
 ### API Documentation Page
-- [Visit](http://b3zaleel.github.io/Banka/api/v1/doc/index.html)
+[Visit](http://b3zaleel.github.io/Banka/api/v1/doc/index.html)

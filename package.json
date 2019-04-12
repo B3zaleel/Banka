@@ -4,8 +4,8 @@
   "description": "An API for handling Banka web app requests",
   "main": "bankaAPI.js",
   "scripts": {
-    "start": "npm run apidoc && node bankaAPI.js",
-    "startSimple": "node bankaAPI.js",
+    "start": "node bankaAPI.js",
+    "start-with-apidocs": "npm run apidoc && node bankaAPI.js",
     "test": "mocha test/**/*.js --exit",
     "test-with-coverage": "nyc --reporter=text mocha test/**/*.js --exit",
     "cover": "nyc mocha test/**/*.js --exit",
