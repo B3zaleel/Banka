@@ -4,10 +4,7 @@ node_js:
 install:
   - npm install
 before_install:
-  - npm install express
-  - npm install consign
-  - npm install body-parser
-  - npm install mocha chai --save-dev
-  - npm install supertest --save-dev
+  - npm install express consign body-parser
+  - npm install mocha chai supertest mocha-lcov-reporter nyc coveralls --save-dev
 after_success:
   - npm run test-with-coverage
