@@ -1,5 +1,7 @@
 # Banka
 [![Build Status](https://travis-ci.org/B3zaleel/Banka.svg?branch=develop)](https://travis-ci.org/B3zaleel/Banka)
+[![Coverage Status](https://coveralls.io/repos/github/B3zaleel/Banka/badge.svg?branch=develop)](https://coveralls.io/github/B3zaleel/Banka?branch=develop)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 #### Description
 Banka is a light-weight core banking application that powers banking operations like account creation, customer deposit and withdrawals.
