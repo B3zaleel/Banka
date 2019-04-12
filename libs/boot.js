@@ -2,12 +2,14 @@
 module.exports = (bankaAPI) => {
 
   if (bankaAPI.get('env') !== 'test') {
-    bankaAPI.listen(bankaAPI.get('port'), () => {
-      console.log(`banka API has started at localhost:${bankaAPI.get('port')}`);
+    const port = process.env.PORT || bankaAPI.get('defaultPort');
+    bankaAPI.listen(port, () => {
+      console.log(`Banka API has started listening at port:${port}`);
     });
   } else {
-    bankaAPI.listen(bankaAPI.get('testPort'), () => {
-      console.log(`banka API has started at localhost:${bankaAPI.get('testPort')}`);
+    const port = process.env.PORT || bankaAPI.get('testPort');
+    bankaAPI.listen(port, () => {
+      console.log(`Banka API has started listening at port:${port}`);
     });
   }
 };
