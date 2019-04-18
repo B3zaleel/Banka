@@ -2,14 +2,14 @@
   "name": "banka",
   "version": "1.1.1",
   "description": "An API for handling Banka web app requests",
-  "main": "bankaAPI.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node bankaAPI.js",
-    "start-with-apidocs": "npm run apidoc && node bankaAPI.js",
+    "start": "node server.js",
+    "start-with-apidocs": "npm run apidoc && node server.js",
     "test": "mocha test/**/*.js --exit",
     "test-with-coverage": "nyc --reporter=text mocha test/**/*.js --exit",
     "cover": "nyc mocha test/**/*.js --exit",
-    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
+    "coveralls": "nyc mocha test/**/*.js --exit && nyc report --reporter=text-lcov | coveralls",
     "apidoc": "apidoc -i routes/ -o public/doc"
   },
   "dependencies": {
