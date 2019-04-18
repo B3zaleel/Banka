@@ -313,15 +313,15 @@ hr.fullDemarcation{
 }
 
 .createBankAccount .formPanelRow{
-    grid-template-columns: 110px 1fr;
+    grid-template-columns: 118px 1fr;
 }
 
 .createStaffAccount .formPanelRow{
-    grid-template-columns: 185px 1fr;
+    grid-template-columns: 200px 1fr;
 }
 
 .makeTransaction .formPanelRow{
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 160px 1fr;
 }
 
 .formPanelLeftItem{
@@ -331,6 +331,46 @@ hr.fullDemarcation{
 
 .formPanelRightItem{
     grid-column: 2;
+}
+
+.signIn .formPanelLeftItem{
+    padding-left: 8px;
+}
+
+.signIn .formPanelRightItem{
+    padding-right: 18px;
+}
+
+.signUp .formPanelLeftItem{
+    padding-left: 5px;
+}
+
+.signUp .formPanelRightItem{
+    padding-right: 15px;
+}
+
+.createStaffAccount .formPanelLeftItem{
+    padding-left: 10px;
+}
+
+.createStaffAccount .formPanelRightItem{
+    padding-right: 15px;
+}
+
+.createBankAccount .formPanelLeftItem{
+    padding-left: 15px;
+}
+
+.createBankAccount .formPanelRightItem{
+    padding-right: 20px;
+}
+
+.makeTransaction .formPanelLeftItem{
+    padding-left: 15px;
+}
+
+.makeTransaction .formPanelRightItem{
+    padding-right: 20px;
 }
 
 .formPanelCenterItem{
@@ -755,7 +795,9 @@ select.formPanelSelect:focus {
     }
 
     .formPanelRow{
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: stretch;
         margin-top: 10px;
         margin-bottom: 10px;
@@ -765,12 +807,14 @@ select.formPanelSelect:focus {
         display: flex;
         display: -webkit-flex;
         justify-content: center;
+        padding-left: 0px;
     }
 
     .formPanelRightItem{
         display: flex;
         display: -webkit-flex;
         justify-content: center;
+        padding-right: 0px;
     }
 
     .formPanelLabel{
