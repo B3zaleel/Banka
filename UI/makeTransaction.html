@@ -9,7 +9,7 @@
     <title>Make Transaction - Banka</title>
 </head>
 <body>
-    <div>
+    <div class="pageContent">
         <div id="pageHeaderPanel" class="pageHeader">
             <a class="homeLink" href="#">
                 <!-- <img/> -->
@@ -20,68 +20,71 @@
         </div>
 
         <div id="pageBodyPanel" class="pageBody">
-            <div>
-                <div class="h-centerText">
-                    <h3>
+            <div class="v-centerGroup">
+                <div>
+                    <br/>
+                    <br/>
+                    <div class="h-centerText">
                         Please fill in the required information <br/> below to make the transaction.
-                    </h3>
-                </div>
-
-                <div class="h-centerGroup">
-                    <div class="errorPanel negative" id="inputErrorPanel">
                     </div>
-                </div>
 
-                <div class="h-centerGroup">
-                    <div class="formPanel makeTransaction">
-
-                        <div class="formPanelRow">
-                            <span class="formPanelLeftItem">
-                                <label class="formPanelLabel required-Label ">
-                                    Account Number
-                                </label>
-                            </span>
-                            <span class="formPanelRightItem">
-                                <input id="accountNumberInput" class="formPanelInput" type="number" name="accountNumber" required="required"/>
-                            </span>
+                    <div class="h-centerGroup">
+                        <div class="errorPanel negative" id="inputErrorPanel">
                         </div>
-
-                        <div class="formPanelRow">
-                            <span class="formPanelLeftItem">
-                                <label class="formPanelLabel">
-                                    Transaction Type
-                                </label>
-                            </span>
-                            <span class="formPanelRightItem">
-                                <select id="transactionTypeComboBox" name="transactionType" class="formPanelSelect">
-                                    <option value="credit" selected="selected"> Credit </option>
-                                    <option value="debit"> Debit </option>
-                                </select>
-                            </span>
-                        </div>
-
-                        <div class="formPanelRow">
-                            <span class="formPanelLeftItem">
-                                <label class="required-Label formPanelLabel">
-                                    Amount
-                                </label>
-                            </span>
-                            <span class="formPanelRightItem">
-                                <input id="ammountInput" class="formPanelInput" type="text" name="transactionAmount" pattern="(\d+|\d*\.\d+)" required="required"/>
-                            </span>
-                        </div>
-
-                        <div class="h-centerGroup">
-                            <button id="makeTransaction" class="actionBtn">
-                                Make Transaction
-                            </button>
-                        </div>
-
                     </div>
+
+                    <div class="h-centerGroup">
+                        <div class="formPanel makeTransaction">
+
+                            <div class="formPanelRow">
+                                <span class="formPanelLeftItem">
+                                    <label class="required-Label formPanelLabel">
+                                        Account Number
+                                    </label>
+                                </span>
+                                <span class="formPanelRightItem">
+                                    <input id="accountNumberInput" class="formPanelInput" type="number" name="accountNumber" required="required"/>
+                                </span>
+                            </div>
+
+                            <div class="formPanelRow">
+                                <span class="formPanelLeftItem">
+                                    <label class="formPanelLabel">
+                                        Transaction Type
+                                    </label>
+                                </span>
+                                <span class="formPanelRightItem">
+                                    <select id="transactionTypeComboBox" name="transactionType" class="formPanelSelect">
+                                        <option value="credit" selected="selected"> Credit </option>
+                                        <option value="debit"> Debit </option>
+                                    </select>
+                                </span>
+                            </div>
+
+                            <div class="formPanelRow">
+                                <span class="formPanelLeftItem">
+                                    <label class="required-Label formPanelLabel">
+                                        Amount
+                                    </label>
+                                </span>
+                                <span class="formPanelRightItem">
+                                    <input id="ammountInput" class="formPanelInput" type="text" name="transactionAmount" pattern="(\d+|\d*\.\d+)" required="required"/>
+                                </span>
+                            </div>
+
+                            <div class="h-centerGroup">
+                                <button id="makeTransaction" class="actionBtn">
+                                    Make Transaction
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <script type="text/javascript">
+                    </script>
                 </div>
 
-                <script type="text/javascript">
-                </script>
             </div>
 
         </div>
@@ -91,7 +94,7 @@
             <footer >
                 <div class="h-centerGroup">
                     <div>
-                        <a href="#">About</a>
+                        <a href="./about.html">About</a>
                         <!-- <a href="./PrivacyPolicy.html">Privacy Policy</a> -->
                         <a href="#">Contact</a>
                     </div>
@@ -100,7 +103,7 @@
                     <label id="footerCopyrightLbl"></label>
                 </div>
 
-            </footer>
+            </div>
         </div>
     </div>
 

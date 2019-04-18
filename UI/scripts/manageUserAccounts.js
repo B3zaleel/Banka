@@ -19,28 +19,6 @@ let accountItemsPageIndex = 0;
 let usersResultsCount = 0;
 
 
-window.addEventListener('load', (loadEvent) => {
-    userAccountsPanelElement.addEventListener('mousedown', (mouseDownEvent) => {
-        if (mouseDownEvent.target.getAttribute('data-path') != 'search') {
-            closeSearchListPanel();
-        }
-    });
-    const testUsersData = [
-        {
-            id: 0,
-            email: 'janepike@cormail.com',
-            firstName: 'Janet',
-            lastName: 'Pike',
-            type: 'client',
-            isAdmin: false,
-            isActivated: true
-        }
-    ];
-
-    renderUserAccountItemsRangeInfo(testUsersData);
-    renderUserAccountsData(testUsersData);
-});
-
 const renderUserAccountItemsRangeInfo = (accountsResultsInfo) => {
     for (let a = 0; a < pagesNumberOfItems.length; a++) {
         pagesNumberOfItems.pop();
@@ -400,3 +378,25 @@ const turnOffHighlightAttribute_OnMouseDown = (pageIndex, itemIndex, defaultClas
 };
 
 // #endregion
+
+window.addEventListener('load', (loadEvent) => {
+    userAccountsPanelElement.addEventListener('mousedown', (mouseDownEvent) => {
+        if (mouseDownEvent.target.getAttribute('data-path') != 'search') {
+            closeSearchListPanel();
+        }
+    });
+    const testUsersData = [
+        {
+            id: 0,
+            email: 'janepike@cormail.com',
+            firstName: 'Janet',
+            lastName: 'Pike',
+            type: 'client',
+            isAdmin: false,
+            isActivated: true
+        }
+    ];
+
+    renderUserAccountItemsRangeInfo(testUsersData);
+    renderUserAccountsData(testUsersData);
+});

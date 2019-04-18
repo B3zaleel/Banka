@@ -13,24 +13,30 @@
 }
 
 .splitPanel{
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-auto-columns: 50px auto;
+  align-items: stretch;
   height: 100%;
 }
 
 .splitPanel-Right{
   width: 100%;
-  padding-left: 10px;
+  padding: 10px 0 0 0;
   overflow: auto;
+  overflow-y: auto;
+  overflow-x: auto;
+  grid-column: 2;
 }
 
 .splitPanel-Left{
+  margin-top: 10px;
   padding: 2px 0px 2px 0px;
   background-color: var(--lightGrayColorLevel1);
   overflow: auto;
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: auto;
   border-right: 5px solid var(--mediumGrayColorLevel);
+  grid-column: 1;
 }
 
 .splitPanel-Left.opened{

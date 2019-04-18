@@ -6,17 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/font-awesome.css">
     <link rel="stylesheet" href="./css/site.css">
-    <title>Pages Layout - Banka</title>
+    <title>Home - Banka</title>
 </head>
 <body>
-    <div>
+    <div class="pageContent">
         <div id="pageHeaderPanel" class="pageHeader">
-            <a class="homeLink">
-                <!-- <img/> -->
-                <label>
-                    Banka
-                </label>
-            </a>
+            <div class="pageHeaderContainer">
+                <span class="pageHeader-LeftContent">
+                    <button id="sideBarToggleBtn" class="sideBarToggleBtn">
+                        <b class="fa fa-bars"></b>
+                    </button>
+                    <a class="homeLink" href="#">
+                        <!-- <img/> -->
+                        <label>
+                            Banka
+                        </label>
+                    </a>
+                </span>
+
+                <span class="pageHeader-RightContent dd-btn">
+                    <button onclick="toggleNavBarAuthMenu()">
+                        <b class="fa fa-ellipsis-v"></b>
+                    </button>
+                </span>
+                <span id="authDDPanel" class="pageHeader-RightContent auth" data-info="auth_dd" data-state="close">
+                    <a class="pageHeaderLink" href="#" data-info="auth_dd">Sign In</a>
+                    <a class="pageHeaderLink" href="#" data-info="auth_dd">Sign Up</a>
+                </span>
+
+            </div>
+
         </div>
 
         <div id="pageBodyPanel" class="pageBody">
@@ -25,10 +44,10 @@
 
         <div id="pageFooterPanel" class="pageFooter">
             <hr class="footerLine"/>
-            <footer >
+            <div>
                 <div class="h-centerGroup">
                     <div>
-                        <a href="#">About</a>
+                        <a href="./about.html">About</a>
                         <!-- <a href="./PrivacyPolicy.html">Privacy Policy</a> -->
                         <a href="#">Contact</a>
                     </div>
@@ -37,7 +56,7 @@
                     <label id="footerCopyrightLbl"></label>
                 </div>
 
-            </footer>
+            </div>
         </div>
     </div>
 

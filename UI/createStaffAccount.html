@@ -9,9 +9,9 @@
     <title>Create Staff Account - Banka</title>
 </head>
 <body>
-    <div>
+    <div class="pageContent">
         <div id="pageHeaderPanel" class="pageHeader">
-            <a class="homeLink" href="#">
+            <a class="homeLink">
                 <!-- <img/> -->
                 <label>
                     Banka
@@ -25,15 +25,17 @@
                     <h3>
                         Please fill in the required fields and submit.<br/>
                     </h3>
-                    <i>
-                        NB: Required fields begin with <span class="required-Label"></span>
-                    </i>
                 </div>
-                <br/>
-                <div class="h-centerGroup">
-                    <div class="formPanel">
 
-                        <div class="formPanelRow createStaffAccount">
+                <div class="h-centerGroup">
+                    <div class="errorPanel negative" id="inputErrorPanel">
+                    </div>
+                </div>
+
+                <div class="h-centerGroup">
+                    <div class="formPanel createStaffAccount">
+
+                        <div class="formPanelRow">
                             <span class="formPanelLeftItem">
                                 <label class="formPanelLabel">
                                     Administrator Account
@@ -68,7 +70,7 @@
 
                         <div class="formPanelRow">
                             <span class="formPanelLeftItem">
-                                <label class="formPanelLabel">
+                                <label class="formPanelLabel required-Label">
                                     Email
                                 </label>
                             </span>
@@ -77,16 +79,16 @@
                             </span>
                         </div>
 
-                        <div class="formPanelRow">
+                        <!-- <div class="formPanelRow">
                             <span class="formPanelLeftItem">
-                                <label class="required-Label formPanelLabel">
+                                <label class="formPanelLabel">
                                     Phone Number
                                 </label>
                             </span>
                             <span class="formPanelRightItem">
                                 <input id="staffPhoneNumberInput" type="tel" class="formPanelInput" name="newUserPhoneNumber" placeholder="(234) - 801- 2345 - 6789" required="required"/>
                             </span>
-                        </div>
+                        </div> -->
 
                         <div class="formPanelRow">
                             <span class="formPanelLeftItem">
@@ -110,7 +112,7 @@
                             </span>
                         </div>
 
-                        <div class="h-centerGroup">
+                        <div class="h-centerGroup formPanelCenterItem">
                             <button class="actionBtn">
                                 Create Staff Account
                             </button>
@@ -122,7 +124,6 @@
                     </script>
                 </div>
             </div>
-
         </div>
 
         <div id="pageFooterPanel" class="pageFooter">
@@ -130,7 +131,7 @@
             <footer >
                 <div class="h-centerGroup">
                     <div>
-                        <a href="#">About</a>
+                        <a href="./about.html">About</a>
                         <!-- <a href="./PrivacyPolicy.html">Privacy Policy</a> -->
                         <a href="#">Contact</a>
                     </div>
@@ -139,7 +140,7 @@
                     <label id="footerCopyrightLbl"></label>
                 </div>
 
-            </footer>
+            </div>
         </div>
     </div>
 

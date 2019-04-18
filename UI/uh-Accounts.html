@@ -12,7 +12,7 @@
     <title>Accounts - Banka</title>
 </head>
 <body>
-    <div>
+    <div class="pageContent">
         <div id="pageHeaderPanel" class="pageHeader">
             <button id="sideBarToggleBtn" class="sideBarToggleBtn">
                 <b class="fa fa-bars"></b>
@@ -25,7 +25,7 @@
             </a>
         </div>
 
-        <div id="pageBodyPanel" class="pageBody">
+        <div id="pageBodyPanel" class="pageBody normal">
             <div>
                 <div class="splitPanel">
                     <div id="sideBar" class="splitPanel-Left closed" data-viewState="close">
@@ -34,17 +34,19 @@
                                 <span class="h-centerGroup">
                                     <img class="profilePic" id="profilePic" src="./images/testProfilePic.jpg"/>
                                 </span>
-                                <span class="profileDetails-Container">
-                                    <span class="profileDetails">
-                                        <span class="h-centerGroup">
-                                            <label id="profileNames">
-                                                Marcus Wood
-                                            </label>
-                                        </span>
-                                        <span class="h-centerGroup">
-                                            <label id="profileEmail">
-                                                marcus@qmail.com
-                                            </label>
+                                <span class="h-centerGroup">
+                                    <span class="profileDetails-Container">
+                                        <span class="profileDetails">
+                                            <span class="h-centerGroup">
+                                                <label id="profileNames">
+                                                    Marcus Wood
+                                                </label>
+                                            </span>
+                                            <span class="h-centerGroup">
+                                                <label id="profileEmail">
+                                                    marcus@qmail.com
+                                                </label>
+                                            </span>
                                         </span>
                                     </span>
                                 </span>
@@ -84,10 +86,12 @@
                                 <label id="accountsCountLabel">
 
                                 </label>
+                                <span class="rightAlignedBtn">
+                                    <button class="actionBtn"  href="./CreateBankAccount.html" target="_blank">
+                                        <b class="fa fa-plus"></b> <label>Create new account</label>
+                                    </button>
+                                </span>
 
-                                <a class="actionBtn" href="./CreateBankAccount.html" target="_blank">
-                                    <b class="fa fa-plus"></b> Create new account
-                                </a>
                                 <br/>
                                 <br/>
                             </div>
@@ -104,10 +108,10 @@
 
         <div id="pageFooterPanel" class="pageFooter">
             <hr class="footerLine"/>
-            <footer >
+            <div>
                 <div class="h-centerGroup">
                     <div>
-                        <a href="#">About</a>
+                        <a href="./about.html">About</a>
                         <!-- <a href="./PrivacyPolicy.html">Privacy Policy</a> -->
                         <a href="#">Contact</a>
                     </div>
@@ -115,8 +119,7 @@
                 <div class="h-centerGroup">
                     <label id="footerCopyrightLbl"></label>
                 </div>
-
-            </footer>
+            </div>
         </div>
     </div>
 
